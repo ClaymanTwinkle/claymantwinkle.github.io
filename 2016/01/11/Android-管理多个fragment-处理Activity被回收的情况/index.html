@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Android 管理多个fragment(处理Activity被回收的情况) | Kesar的博客</title>
+  <title>Android 管理多个fragment(处理Activity被回收的情况) | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。
-
-   情">
+  <meta name="description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android 管理多个fragment(处理Activity被回收的情况)">
 <meta property="og:url" content="https://claymantwinkle.github.io/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/index.html">
-<meta property="og:site_name" content="Kesar的博客">
-<meta property="og:description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。
-
-   情">
-<meta property="og:updated_time" content="2016-01-11T02:07:55.117Z">
+<meta property="og:site_name" content="Kesar的个人博客">
+<meta property="og:description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。">
+<meta property="og:updated_time" content="2016-01-11T02:51:40.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android 管理多个fragment(处理Activity被回收的情况)">
-<meta name="twitter:description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。
-
-   情">
+<meta name="twitter:description" content="做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -58,7 +52,7 @@
 		</hgroup>
 
 		
-		<p class="header-subtitle">Kesar 个人博客</p>
+		<p class="header-subtitle">码农，技术宅，专注于Android技术开发</p>
 		
 <input type="text" class="st-default-search-input" id="search" placeholder=" Search...">
 		
@@ -200,7 +194,7 @@
 			  <h1 class="header-author">Kesar-Claymantwinkle</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">Kesar 个人博客</p>
+			<p class="header-subtitle">码农，技术宅，专注于Android技术开发</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -280,6 +274,7 @@
       
           
         <p>做了好久的项目，由于进度赶，也没怎么闲心来写博客。不过项目赶是赶，也不是一口就能吞掉的，要慢慢来。既然慢慢来，就抽出点时间来写点什么。在项目里遇到好几个棘手的问题。有几个是被我解决掉。其中一个就是多个fragment的管理问题。只能说我是android的新手，也没怎么系统学习android，所以有些东西，只能在项目里摸索，要用到哪个就学哪个，还好我还大概知道哪些该在哪用，哪些该是被学。</p>
+<a id="more"></a>
 <hr>
 <p>   <strong>情景一：</strong>一个Activity中使用多个fragment，以tab的形式来点击切换fragment。一共用到了4个fragment,用一个全局的fragment数组保存了所有fragment的引用。在onCreate方法中完成实例化（默认显示第一个fragment）。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mContentFragments = <span class="keyword">new</span> BaseFragment[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
@@ -302,7 +297,7 @@
         <p><span>本文标题:</span><a href="/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/">Android 管理多个fragment(处理Activity被回收的情况)</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar-Claymantwinkle 个人博客">Kesar-Claymantwinkle</a></p>
         <p><span>发布时间:</span>2016年01月11日 - 09时57分</p>
-        <p><span>最后更新:</span>2016年01月11日 - 10时07分</p>
+        <p><span>最后更新:</span>2016年01月11日 - 10时51分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/" title="Android 管理多个fragment(处理Activity被回收的情况)">https://claymantwinkle.github.io/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/　　作者: Kesar-Claymantwinkle" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
