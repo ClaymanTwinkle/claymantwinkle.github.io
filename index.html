@@ -244,20 +244,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。</p>
-<hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> size_long;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size_long;</span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> size_ma = size_long / <span class="number">0.0</span>; <span class="comment">// 0.0算是除数为0了吧？</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; size_ma &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后输出了一个奇怪的数<code>1.#INF</code><br>你可能知道，我就不知道，打开浏览器Google！</p>
-<blockquote>
-<p>一个外国博客说：”If your operation would generate a larger positive number than could be stored in a <code>double</code>, the operation will return <code>1.#INF</code> on Windows or <code>inf</code> on Linux. Similarly your code will return<code>-1.#INF</code> or <code>-inf</code> if the result would be a negative number too large to store in a <code>double</code>.”<br>意思是说除法计算出来的数太大了，才会返回类似<code>1.#INF</code>,<code>-1.#INF</code>等等。</p>
-</blockquote>
-<p>既然如此，那就好玩了，我们看看Java会不会也是这样！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">111</span>/<span class="number">0.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>“正无穷”输出：<code>Infinity</code> “负无穷”输出：<code>-Infinity</code></p>
-<blockquote>
-<p>果然不出所料。<br>总结：我们在使用除法时，无聊是整数还是小数都要判断除数是否为零的情况，避免出现奇怪的错误(bug)。</p>
-</blockquote>
-
+              <p>重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。</p>
+          
       
     </div>
     
@@ -266,6 +254,10 @@
       
 
       
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/13/C-学习-奇怪的除法/#more">大航海 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
