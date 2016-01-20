@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[C++学习]奇怪的除法 | Kesar的个人博客</title>
+  <title>Hello World | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。">
+  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[C++学习]奇怪的除法">
-<meta property="og:url" content="https://claymantwinkle.github.io/2016/01/13/C-学习-奇怪的除法/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/01/20/hello-world/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。">
-<meta property="og:updated_time" content="2016-01-13T05:36:39.700Z">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
+<meta property="og:updated_time" content="2016-01-20T12:51:17.825Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[C++学习]奇怪的除法">
-<meta name="twitter:description" content="重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。">
+<meta name="twitter:title" content="Hello World">
+<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -213,11 +216,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-C-学习-奇怪的除法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/13/C-学习-奇怪的除法/" class="article-date">
-  	<time datetime="2016-01-13T02:24:16.000Z" itemprop="datePublished">2016-01-13</time>
+      <a href="/2016/01/20/hello-world/" class="article-date">
+  	<time datetime="2016-01-20T12:51:17.825Z" itemprop="datePublished">2016-01-20</time>
 </a>
     </div>
   
@@ -230,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [C++学习]奇怪的除法
+      Hello World
     </h1>
   
 
@@ -238,16 +241,8 @@
       
       <div class="article-info article-info-post">
         
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/语言/">语言</a>
-	</div>
-
 
         
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -255,20 +250,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>重新复习C++，买了本《C++ primer plus》看看。记录一些学习心得。</p>
-<a id="more"></a>
-<hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> size_long;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; size_long;</span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> size_ma = size_long / <span class="number">0.0</span>; <span class="comment">// 0.0算是除数为0了吧？</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; size_ma &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span>.get();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后输出了一个奇怪的数<code>1.#INF</code><br>你可能知道，我就不知道，打开浏览器Google！</p>
-<blockquote>
-<p>一个外国博客说：”If your operation would generate a larger positive number than could be stored in a <code>double</code>, the operation will return <code>1.#INF</code> on Windows or <code>inf</code> on Linux. Similarly your code will return<code>-1.#INF</code> or <code>-inf</code> if the result would be a negative number too large to store in a <code>double</code>.”<br>意思是说除法计算出来的数太大了，才会返回类似<code>1.#INF</code>,<code>-1.#INF</code>等等。</p>
-</blockquote>
-<p>既然如此，那就好玩了，我们看看Java会不会也是这样！</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="number">111</span>/<span class="number">0.0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>“正无穷”输出：<code>Infinity</code> “负无穷”输出：<code>-Infinity</code></p>
-<blockquote>
-<p>果然不出所料。<br>总结：我们在使用除法时，无聊是整数还是小数都要判断除数是否为零的情况，避免出现奇怪的错误(bug)。</p>
-</blockquote>
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
@@ -277,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/13/C-学习-奇怪的除法/">[C++学习]奇怪的除法</a></p>
+        <p><span>本文标题:</span><a href="/2016/01/20/hello-world/">Hello World</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
-        <p><span>发布时间:</span>2016年01月13日 - 10时24分</p>
-        <p><span>最后更新:</span>2016年01月13日 - 13时36分</p>
+        <p><span>发布时间:</span>2016年01月20日 - 20时51分</p>
+        <p><span>最后更新:</span>2016年01月20日 - 20时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/13/C-学习-奇怪的除法/" title="[C++学习]奇怪的除法">https://claymantwinkle.github.io/2016/01/13/C-学习-奇怪的除法/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/13/C-学习-奇怪的除法/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/20/hello-world/" title="Hello World">https://claymantwinkle.github.io/2016/01/20/hello-world/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/20/hello-world/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -296,18 +286,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/12/几种访问谷歌的方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">几种访问谷歌的方法</div>
+    <a href="/2016/01/13/C-学习-奇怪的除法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[C++学习]奇怪的除法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -333,7 +314,7 @@
 
     <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/13/C-学习-奇怪的除法/" data-title="[C++学习]奇怪的除法" data-url="https://claymantwinkle.github.io/2016/01/13/C-学习-奇怪的除法/"></div>
+    <div class="ds-thread" data-thread-key="2016/01/20/hello-world/" data-title="Hello World" data-url="https://claymantwinkle.github.io/2016/01/20/hello-world/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -358,15 +339,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/20/hello-world/" title="上一篇: Hello World">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/12/几种访问谷歌的方法/" title="下一篇: 几种访问谷歌的方法">
+            <a href="/2016/01/13/C-学习-奇怪的除法/" title="下一篇: [C++学习]奇怪的除法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
