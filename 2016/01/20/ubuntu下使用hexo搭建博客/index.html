@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Kesar的个人博客">
 <meta property="og:description" content="###1.安装Node.js
 123sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs">
-<meta property="og:updated_time" content="2016-01-20T13:01:41.683Z">
+<meta property="og:updated_time" content="2016-01-20T13:02:50.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ubuntu下使用hexo搭建博客">
 <meta name="twitter:description" content="###1.安装Node.js
@@ -250,21 +250,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>###<strong>1.安装Node.js</strong></p>
+        <p>###1.安装Node.js</p>
 <figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:chris-lea/node.js</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nodejs</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>###<strong>2.安装Git</strong></p>
+<p>###2.安装Git</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install git</span><br></pre></td></tr></table></figure>
-<p>###<strong>3.安装hexo</strong></p>
+<p>###3.安装hexo</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
 <p>初始你博客的根目录（或者cd到指定目录下，然后执行hexo init）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="tag">&lt;<span class="title">dir</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>###<strong>4.让博客可以发布到git</strong>（参考连接：<a href="https://hexo.io/docs/deployment.html）" target="_blank" rel="external">https://hexo.io/docs/deployment.html）</a></p>
+<p>###4.让博客可以发布到git（参考连接：<a href="https://hexo.io/docs/deployment.html）" target="_blank" rel="external">https://hexo.io/docs/deployment.html）</a></p>
 <p>（1）安装hexo-deployer-git（不然会出现ERROR Deployer not found: git）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
 <p>（2） 配置你hexo博客根目录下的_config.yml文件(应该是最下面一行，修改成你的github)</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="operator">type</span>: git</span><br><span class="line">  repo: git@github.com:ClaymanTwinkle/ClaymanTwinkle.github.io.git</span><br><span class="line">  branch: <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-<p>###<strong>5.hexo常用命令</strong></p>
+<p>###5.hexo常用命令</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">创建页面：hexo new <span class="keyword">post</span> <span class="string">"文章名字（可以是中文）"</span></span><br><span class="line"></span><br><span class="line">生成html ： hexo <span class="keyword">generate</span>（或者hexo <span class="keyword">g</span>）</span><br><span class="line"></span><br><span class="line">发布到git： hexo deploy</span><br><span class="line"></span><br><span class="line">生成并发布：hexo <span class="keyword">generate</span> -<span class="keyword">d</span> （或者hexo <span class="keyword">g</span> -<span class="keyword">d</span>）</span><br></pre></td></tr></table></figure>
 
       
@@ -277,7 +277,7 @@
         <p><span>本文标题:</span><a href="/2016/01/20/ubuntu下使用hexo搭建博客/">ubuntu下使用hexo搭建博客</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
         <p><span>发布时间:</span>2016年01月20日 - 21时01分</p>
-        <p><span>最后更新:</span>2016年01月20日 - 21时01分</p>
+        <p><span>最后更新:</span>2016年01月20日 - 21时02分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/20/ubuntu下使用hexo搭建博客/" title="ubuntu下使用hexo搭建博客">https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
