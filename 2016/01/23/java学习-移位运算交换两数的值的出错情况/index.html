@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ubuntu下使用hexo搭建博客 | Kesar的个人博客</title>
+  <title>[java学习]移位运算交换两数的值的出错情况 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="###1.安装Node.js
-123sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs">
+  <meta name="description" content="##移位运算，交换两数的值
+1234567int a=10;int b=52;System.err.println(&quot;开始：&quot;+a+&quot;,&quot;+b);a=a^b;b=a^b;a=a^b;System.err.println(&quot;结束：&quot;+a+&quot;,&quot;+b);
+结果是：
+开始：10,52
+结束：52,10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu下使用hexo搭建博客">
-<meta property="og:url" content="https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/index.html">
+<meta property="og:title" content="[java学习]移位运算交换两数的值的出错情况">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/01/23/java学习-移位运算交换两数的值的出错情况/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="###1.安装Node.js
-123sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs">
-<meta property="og:updated_time" content="2016-01-20T13:06:30.824Z">
+<meta property="og:description" content="##移位运算，交换两数的值
+1234567int a=10;int b=52;System.err.println(&quot;开始：&quot;+a+&quot;,&quot;+b);a=a^b;b=a^b;a=a^b;System.err.println(&quot;结束：&quot;+a+&quot;,&quot;+b);
+结果是：
+开始：10,52
+结束：52,10">
+<meta property="og:updated_time" content="2016-01-22T16:41:06.054Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu下使用hexo搭建博客">
-<meta name="twitter:description" content="###1.安装Node.js
-123sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs">
+<meta name="twitter:title" content="[java学习]移位运算交换两数的值的出错情况">
+<meta name="twitter:description" content="##移位运算，交换两数的值
+1234567int a=10;int b=52;System.err.println(&quot;开始：&quot;+a+&quot;,&quot;+b);a=a^b;b=a^b;a=a^b;System.err.println(&quot;结束：&quot;+a+&quot;,&quot;+b);
+结果是：
+开始：10,52
+结束：52,10">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -216,11 +225,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-ubuntu下使用hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java学习-移位运算交换两数的值的出错情况" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/20/ubuntu下使用hexo搭建博客/" class="article-date">
-  	<time datetime="2016-01-20T13:01:13.000Z" itemprop="datePublished">2016-01-20</time>
+      <a href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/" class="article-date">
+  	<time datetime="2016-01-22T16:39:40.000Z" itemprop="datePublished">2016-01-23</time>
 </a>
     </div>
   
@@ -233,7 +242,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ubuntu下使用hexo搭建博客
+      [java学习]移位运算交换两数的值的出错情况
     </h1>
   
 
@@ -242,13 +251,13 @@
       <div class="article-info article-info-post">
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/随笔/">随笔</a>
+	<a class="article-category-link" href="/categories/语言/">语言</a>
 	</div>
 
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -258,23 +267,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>###1.安装Node.js</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo<span class="instruction"> add-apt-repository </span>ppa:chris-lea/node.js</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nodejs</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>###2.安装Git</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="keyword">get</span> install git</span><br></pre></td></tr></table></figure>
-<p>###3.安装hexo</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure>
-<p>初始你博客的根目录（或者cd到指定目录下，然后执行hexo init）</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="tag">&lt;<span class="title">dir</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>###4.让博客可以发布到git（参考连接：<a href="https://hexo.io/docs/deployment.html）" target="_blank" rel="external">https://hexo.io/docs/deployment.html）</a></p>
-<p>（1）安装hexo-deployer-git（不然会出现ERROR Deployer not found: git）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<p>（2） 配置你hexo博客根目录下的_config.yml文件(应该是最下面一行，修改成你的github)</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="operator">type</span>: git</span><br><span class="line">  repo: git@github.com:ClaymanTwinkle/ClaymanTwinkle.github.io.git</span><br><span class="line">  branch: <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-<p>###5.hexo常用命令</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">创建页面：hexo new <span class="keyword">post</span> <span class="string">"文章名字（可以是中文）"</span></span><br><span class="line"></span><br><span class="line">生成html ： hexo <span class="keyword">generate</span>（或者hexo <span class="keyword">g</span>）</span><br><span class="line"></span><br><span class="line">发布到git： hexo deploy</span><br><span class="line"></span><br><span class="line">生成并发布：hexo <span class="keyword">generate</span> -<span class="keyword">d</span> （或者hexo <span class="keyword">g</span> -<span class="keyword">d</span>）</span><br></pre></td></tr></table></figure>
-
+        <p>##移位运算，交换两数的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">52</span>;</span><br><span class="line">System.err.println(<span class="string">"开始："</span>+a+<span class="string">","</span>+b);</span><br><span class="line">a=a^b;</span><br><span class="line">b=a^b;</span><br><span class="line">a=a^b;</span><br><span class="line">System.err.println(<span class="string">"结束："</span>+a+<span class="string">","</span>+b);</span><br></pre></td></tr></table></figure>
+<p>结果是：</p>
+<pre><code>开始：10,52
+结束：52,10
+</code></pre><a id="more"></a>
+<p>##什么时候会出错呢？</p>
+<p>当两个数都是自己时，将会计算出错，结果都会是0.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="comment">//int b=52;</span></span><br><span class="line">System.err.println(<span class="string">"开始："</span>+a+<span class="string">","</span>+a);</span><br><span class="line">a=a^a;</span><br><span class="line">a=a^a;</span><br><span class="line">a=a^a;</span><br><span class="line">System.err.println(<span class="string">"结束："</span>+a+<span class="string">","</span>+a);</span><br></pre></td></tr></table></figure>
+<p>结果是：</p>
+<pre><code>开始：10,10
+结束：0,0
+</code></pre>
       
     </div>
     
@@ -282,13 +287,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/20/ubuntu下使用hexo搭建博客/">ubuntu下使用hexo搭建博客</a></p>
+        <p><span>本文标题:</span><a href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/">[java学习]移位运算交换两数的值的出错情况</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
-        <p><span>发布时间:</span>2016年01月20日 - 21时01分</p>
-        <p><span>最后更新:</span>2016年01月20日 - 21时06分</p>
+        <p><span>发布时间:</span>2016年01月23日 - 00时39分</p>
+        <p><span>最后更新:</span>2016年01月23日 - 00时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/20/ubuntu下使用hexo搭建博客/" title="ubuntu下使用hexo搭建博客">https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/" title="[java学习]移位运算交换两数的值的出错情况">https://claymantwinkle.github.io/2016/01/23/java学习-移位运算交换两数的值的出错情况/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/23/java学习-移位运算交换两数的值的出错情况/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -301,18 +306,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [java学习]移位运算交换两数的值的出错情况
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/13/C-学习-奇怪的除法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[C++学习]奇怪的除法</div>
+    <a href="/2016/01/20/ubuntu下使用hexo搭建博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu下使用hexo搭建博客</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -338,7 +334,7 @@
 
     <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/20/ubuntu下使用hexo搭建博客/" data-title="ubuntu下使用hexo搭建博客" data-url="https://claymantwinkle.github.io/2016/01/20/ubuntu下使用hexo搭建博客/"></div>
+    <div class="ds-thread" data-thread-key="2016/01/23/java学习-移位运算交换两数的值的出错情况/" data-title="[java学习]移位运算交换两数的值的出错情况" data-url="https://claymantwinkle.github.io/2016/01/23/java学习-移位运算交换两数的值的出错情况/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -363,15 +359,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/" title="上一篇: [java学习]移位运算交换两数的值的出错情况">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/13/C-学习-奇怪的除法/" title="下一篇: [C++学习]奇怪的除法">
+            <a href="/2016/01/20/ubuntu下使用hexo搭建博客/" title="下一篇: ubuntu下使用hexo搭建博客">
                 <i class="fa fa-angle-right"></i>
             </a>
         

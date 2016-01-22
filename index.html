@@ -135,7 +135,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a>
+						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a>
 					</div>
 				</section>
 				
@@ -216,6 +216,95 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-java学习-移位运算交换两数的值的出错情况" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/" class="article-date">
+  	<time datetime="2016-01-22T16:39:40.000Z" itemprop="datePublished">2016-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/">[java学习]移位运算交换两数的值的出错情况</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>##移位运算，交换两数的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b=<span class="number">52</span>;</span><br><span class="line">System.err.println(<span class="string">"开始："</span>+a+<span class="string">","</span>+b);</span><br><span class="line">a=a^b;</span><br><span class="line">b=a^b;</span><br><span class="line">a=a^b;</span><br><span class="line">System.err.println(<span class="string">"结束："</span>+a+<span class="string">","</span>+b);</span><br></pre></td></tr></table></figure>
+<p>结果是：</p>
+<pre><code>开始：10,52
+结束：52,10
+</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/语言/">语言</a>
+	</div>
+
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+
   
     <article id="post-ubuntu下使用hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
   
