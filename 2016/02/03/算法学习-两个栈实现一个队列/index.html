@@ -3,24 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1) | Kesar的个人博客</title>
+  <title>[算法学习]两个栈实现一个队列 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：给定一个整型数组，是否能找出其中的两个数使其和为某个指定的值？（假定是无序数组）
-
-解法一：暴力破解（穷举法，不提倡）">
+  <meta name="description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
+分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)">
-<meta property="og:url" content="https://claymantwinkle.github.io/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/index.html">
+<meta property="og:title" content="[算法学习]两个栈实现一个队列">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="问题描述：给定一个整型数组，是否能找出其中的两个数使其和为某个指定的值？（假定是无序数组）
-
-解法一：暴力破解（穷举法，不提倡）">
-<meta property="og:updated_time" content="2016-01-27T16:48:18.182Z">
+<meta property="og:description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
+分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
+<meta property="og:updated_time" content="2016-02-03T05:50:14.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)">
-<meta name="twitter:description" content="问题描述：给定一个整型数组，是否能找出其中的两个数使其和为某个指定的值？（假定是无序数组）
-
-解法一：暴力破解（穷举法，不提倡）">
+<meta name="twitter:title" content="[算法学习]两个栈实现一个队列">
+<meta name="twitter:description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
+分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -219,11 +216,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-算法学习-给定一个整型数组，找出两个整数为指定整数的和-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法学习-两个栈实现一个队列" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/" class="article-date">
-  	<time datetime="2016-01-27T15:47:03.000Z" itemprop="datePublished">2016-01-27</time>
+      <a href="/2016/02/03/算法学习-两个栈实现一个队列/" class="article-date">
+  	<time datetime="2016-02-03T05:47:56.000Z" itemprop="datePublished">2016-02-03</time>
 </a>
     </div>
   
@@ -236,7 +233,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)
+      [算法学习]两个栈实现一个队列
     </h1>
   
 
@@ -251,7 +248,7 @@
 
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
         <div class="clearfix"></div>
@@ -262,11 +259,15 @@
       
           
         <blockquote>
-<p>问题描述：给定一个整型数组，是否能找出其中的两个数使其和为某个指定的值？（假定是无序数组）</p>
+<p><strong>问题描述：</strong><br>用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead</p>
+<p><strong>分析：</strong><br>第一眼就能想到两个做法，<br>(1) 入队麻烦出队容易：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出栈到dataStack，至此入队成功，dataStack栈顶元素就是第一个入队的元素(队头)。<br>出队操作时，只需将dataStack栈顶元素弹出返回就可以。<br>(2) 入队容易出队麻烦：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，只需要将入队元素压入dataStack就可以。<br>出队操作时，需要将dataStack全部元素出栈到tempStack中，tempStack弹出元素返回，然后再将tempStack剩下元素全部出栈到dataStack。</p>
 </blockquote>
-<h3 id="u89E3_u6CD5_u4E00_uFF1A_u66B4_u529B_u7834_u89E3_uFF08_u7A77_u4E3E_u6CD5_uFF0C_u4E0D_u63D0_u5021_uFF09"><a href="#u89E3_u6CD5_u4E00_uFF1A_u66B4_u529B_u7834_u89E3_uFF08_u7A77_u4E3E_u6CD5_uFF0C_u4E0D_u63D0_u5021_uFF09" class="headerlink" title="解法一：暴力破解（穷举法，不提倡）"></a>解法一：暴力破解（穷举法，不提倡）</h3><a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 暴力破解</span><br><span class="line"> * (穷举，时间复杂度：O(n^2)，正常是不会用这个滴，假如只是为了快速解题，对时间没有限制，用这个最简单)</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> nums</span><br><span class="line"> * <span class="doctag">@param</span> target</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">findTwo1</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> one, two;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        one = nums[i];</span><br><span class="line">        two = target - one;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nums.length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i != j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (two == nums[j])</span><br><span class="line">                &#123;</span><br><span class="line">                    System.out.println(<span class="string">"one:"</span> + one + <span class="string">" two:"</span> + two);</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"找不到这两个数"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="u89E3_u6CD5_u4E8C_uFF1A_u4E8C_u5206_u6CD5_uFF08_u76F8_u5F53_u4E8E_u7528_u4E24_u4E2A_u6307_u9488_uFF09"><a href="#u89E3_u6CD5_u4E8C_uFF1A_u4E8C_u5206_u6CD5_uFF08_u76F8_u5F53_u4E8E_u7528_u4E24_u4E2A_u6307_u9488_uFF09" class="headerlink" title="解法二：二分法（相当于用两个指针）"></a>解法二：二分法（相当于用两个指针）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 两个指针二分查找</span><br><span class="line"> * (排序时间复杂度为O(nlog(n)),while最多O(N)，所以最终程序的时间复杂度为：O(nlo(n)))</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> nums</span><br><span class="line"> * <span class="doctag">@param</span> target</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">findTwo2</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="comment">// 1.排列（用的是Dual-Pivot Quicksort(快速排序),时间复杂度为O(nlog(n))）</span></span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="comment">// 2.类二分查找</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> right = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt; right)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[left] + nums[right] &gt; target)</span><br><span class="line">        &#123;<span class="comment">// 太大 right减少</span></span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (nums[left] + nums[right] &lt; target)</span><br><span class="line">        &#123;<span class="comment">// 太小left增加</span></span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;<span class="comment">// 找到结果，结束查找</span></span><br><span class="line">            System.out.println(<span class="string">"one:"</span> + nums[left] + <span class="string">" two:"</span> + nums[right]);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"找不到这两个数"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="<a id=" more"=""></a>"><!-- more --></h2><h2 id="u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF"><a href="#u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF" class="headerlink" title="理一理代码思路"></a>理一理代码思路</h2><p><strong>（1）.</strong> 入队麻烦出队容易<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; dataStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">Stack&lt;Integer&gt; tempStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 入队</span><br><span class="line"> * <span class="doctag">@param</span> item</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        tempStack.push(dataStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    tempStack.push(item);</span><br><span class="line">    <span class="keyword">while</span> (!tempStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        dataStack.push(tempStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 出队</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dataStack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>（2）.</strong> 入队容易出队麻烦<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; dataStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">Stack&lt;Integer&gt; tempStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 入队</span><br><span class="line"> * <span class="doctag">@param</span> item</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    dataStack.push(item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 出队</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"队列为空！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> head=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        tempStack.push(dataStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    head=tempStack.pop();</span><br><span class="line">    <span class="keyword">while</span> (!tempStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        dataStack.push(tempStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="u4F18_u5316"><a href="#u4F18_u5316" class="headerlink" title="优化"></a>优化</h2><blockquote>
+<p><strong>思路：</strong>每次都要全部出栈全部出栈这样太麻烦，时间复杂度有点大。优化方案就是声明一个入队的栈(enStack)和一个出队的栈(deStack)。<br>入队时，将入队元素压入enStack中就可以。<br>出队时，做个判断，如果deStack为空，就将enStack的元素全部出栈压入deStack中，然后将deStack栈顶元素弹出返回即可。<br>这样，确实优化了。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; enStack=<span class="keyword">new</span> Stack&lt;Integer&gt;(); <span class="comment">// 用于入队的表</span></span><br><span class="line">Stack&lt;Integer&gt; deStack=<span class="keyword">new</span> Stack&lt;Integer&gt;(); <span class="comment">// 用于出队的表</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    enStack.push(item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(deStack.isEmpty())</span><br><span class="line">    &#123;<span class="comment">// 当出队的栈为空，那就从入队栈中获取元素更新。</span></span><br><span class="line">        <span class="keyword">while</span>(!enStack.isEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            deStack.push(enStack.pop());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果deStack为空会抛一个EmptyStackException异常，这我就不处理了。</span></span><br><span class="line">    <span class="keyword">return</span> deStack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -274,13 +275,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/">[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/03/算法学习-两个栈实现一个队列/">[算法学习]两个栈实现一个队列</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
-        <p><span>发布时间:</span>2016年01月27日 - 23时47分</p>
-        <p><span>最后更新:</span>2016年01月28日 - 00时48分</p>
+        <p><span>发布时间:</span>2016年02月03日 - 13时47分</p>
+        <p><span>最后更新:</span>2016年02月03日 - 13时50分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/" title="[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)">https://claymantwinkle.github.io/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/03/算法学习-两个栈实现一个队列/" title="[算法学习]两个栈实现一个队列">https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -293,18 +294,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/01/28/算法学习-给定一个整型数组，找出两个整数为指定整数的和-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [算法学习]给定一个整型数组，找出两个整数为指定整数的和(2)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/23/算法学习-Java实现字符串全排列/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[算法学习]Java实现字符串全排列</div>
+    <a href="/2016/02/02/算法学习-输入遍历重建二叉树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[算法学习]输入遍历重建二叉树</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -330,7 +322,7 @@
 
     <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/" data-title="[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)" data-url="https://claymantwinkle.github.io/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/03/算法学习-两个栈实现一个队列/" data-title="[算法学习]两个栈实现一个队列" data-url="https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -355,15 +347,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/28/算法学习-给定一个整型数组，找出两个整数为指定整数的和-2/" title="上一篇: [算法学习]给定一个整型数组，找出两个整数为指定整数的和(2)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/23/算法学习-Java实现字符串全排列/" title="下一篇: [算法学习]Java实现字符串全排列">
+            <a href="/2016/02/02/算法学习-输入遍历重建二叉树/" title="下一篇: [算法学习]输入遍历重建二叉树">
                 <i class="fa fa-angle-right"></i>
             </a>
         

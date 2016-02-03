@@ -87,12 +87,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
-						<li>标签</li>
+						<li>標籤</li>
 						
 						<li>友情链接</li>
 						
 						
-						<li>关于我</li>
+						<li>關於</li>
 						
 					</ul>
 				</div>
@@ -217,6 +217,94 @@
 
       <div class="body-wrap">
   
+    <article id="post-算法学习-两个栈实现一个队列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/03/算法学习-两个栈实现一个队列/" class="article-date">
+  	<time datetime="2016-02-03T05:47:56.000Z" itemprop="datePublished">2016-02-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/03/算法学习-两个栈实现一个队列/">[算法学习]两个栈实现一个队列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p><strong>问题描述：</strong><br>用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead</p>
+<p><strong>分析：</strong><br>第一眼就能想到两个做法，<br>(1) 入队麻烦出队容易：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出栈到dataStack，至此入队成功，dataStack栈顶元素就是第一个入队的元素(队头)。<br>出队操作时，只需将dataStack栈顶元素弹出返回就可以。<br>(2) 入队容易出队麻烦：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，只需要将入队元素压入dataStack就可以。<br>出队操作时，需要将dataStack全部元素出栈到tempStack中，tempStack弹出元素返回，然后再将tempStack剩下元素全部出栈到dataStack。</p>
+</blockquote>
+<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/03/算法学习-两个栈实现一个队列/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+
+  
     <article id="post-算法学习-输入遍历重建二叉树" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -261,7 +349,7 @@
 
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
 	</div>
 
       
@@ -960,84 +1048,6 @@
         <p class="article-more-link">
           <a  href="/2016/01/13/C-学习-奇怪的除法/#more">大航海 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-几种访问谷歌的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/12/几种访问谷歌的方法/" class="article-date">
-  	<time datetime="2016-01-12T13:24:15.000Z" itemprop="datePublished">2016-01-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/12/几种访问谷歌的方法/">几种访问谷歌的方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="1-_u8BBF_u95EE_u56FD_u5185_u5916_u7684Google_u955C_u50CF_uFF08_u4E0D_u65AD_u8865_u5145_uFF0C_u4EB2_u6D4B_u6709_u6548_uFF01_uFF09"><a href="#1-_u8BBF_u95EE_u56FD_u5185_u5916_u7684Google_u955C_u50CF_uFF08_u4E0D_u65AD_u8865_u5145_uFF0C_u4EB2_u6D4B_u6709_u6548_uFF01_uFF09" class="headerlink" title="1.访问国内外的Google镜像（不断补充，亲测有效！）"></a>1.访问国内外的Google镜像（不断补充，亲测有效！）</h3><pre><code>这里本人找到了一些地址，后续会继续补充，如果大家有好的资源也请告诉我O(∩_∩)O~~。
-</code></pre><blockquote>
-<p>谷粉搜搜： <a href="http://www.gfsoso.com/" target="_blank" rel="external">http://www.gfsoso.com/</a><br>Google搜索镜像： <a href="http://www.xiexingwen.com/" target="_blank" rel="external">http://www.xiexingwen.com/</a><br>Googleout：<a href="https://www.out1000.com/" target="_blank" rel="external">https://www.out1000.com/</a><br>谷歌363：<a href="http://www.g363.com/" target="_blank" rel="external">http://www.g363.com/</a><br>谷歌to：<a href="http://www.googto.com" target="_blank" rel="external">http://www.googto.com</a></p>
-</blockquote>
-<h3 id="2-_u6D4F_u89C8_u5668_u63D2_u4EF6"><a href="#2-_u6D4F_u89C8_u5668_u63D2_u4EF6" class="headerlink" title="2.浏览器插件"></a>2.浏览器插件</h3><blockquote>
-<p>听说这个不错<a href="http://www.ggfwzs.com/" target="_blank" rel="external">http://www.ggfwzs.com/</a> Gmail、google和android官网访问都ok</p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
       
       <div class="clearfix"></div>
     </div>
