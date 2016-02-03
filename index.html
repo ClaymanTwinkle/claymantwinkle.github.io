@@ -87,12 +87,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
-						<li>標籤</li>
+						<li>标签</li>
 						
 						<li>友情链接</li>
 						
 						
-						<li>關於</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -244,11 +244,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <blockquote>
+              <p>##目录<br>[TOC]</p>
+<hr>
+<blockquote>
 <p><strong>问题描述：</strong><br>用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead</p>
-<p><strong>分析：</strong><br>第一眼就能想到两个做法，<br>(1) 入队麻烦出队容易：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出栈到dataStack，至此入队成功，dataStack栈顶元素就是第一个入队的元素(队头)。<br>出队操作时，只需将dataStack栈顶元素弹出返回就可以。<br>(2) 入队容易出队麻烦：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，只需要将入队元素压入dataStack就可以。<br>出队操作时，需要将dataStack全部元素出栈到tempStack中，tempStack弹出元素返回，然后再将tempStack剩下元素全部出栈到dataStack。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>

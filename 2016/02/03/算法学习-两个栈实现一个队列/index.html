@@ -5,19 +5,25 @@
   
   <title>[算法学习]两个栈实现一个队列 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
-分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
+  <meta name="description" content="##目录[TOC]
+
+
+问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[算法学习]两个栈实现一个队列">
 <meta property="og:url" content="https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
-分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
-<meta property="og:updated_time" content="2016-02-03T05:50:14.921Z">
+<meta property="og:description" content="##目录[TOC]
+
+
+问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead">
+<meta property="og:updated_time" content="2016-02-03T06:07:56.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法学习]两个栈实现一个队列">
-<meta name="twitter:description" content="问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead
-分析：第一眼就能想到两个做法，(1) 入队麻烦出队容易：声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出">
+<meta name="twitter:description" content="##目录[TOC]
+
+
+问题描述：用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -88,12 +94,12 @@
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
 						<li>菜单</li>
-						<li>標籤</li>
+						<li>标签</li>
 						
 						<li>友情链接</li>
 						
 						
-						<li>關於</li>
+						<li>关于我</li>
 						
 					</ul>
 				</div>
@@ -258,11 +264,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
+        <p>##目录<br>[TOC]</p>
+<hr>
+<blockquote>
 <p><strong>问题描述：</strong><br>用两个栈实现一个队列，实现两个方法：入队appendTail，出队deleteHead</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
 <p><strong>分析：</strong><br>第一眼就能想到两个做法，<br>(1) 入队麻烦出队容易：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，先将dataStack中的所有元素出栈压入tempStack中，然后将要入队的元素压入tempStack中，再将tempStack所有元素出栈到dataStack，至此入队成功，dataStack栈顶元素就是第一个入队的元素(队头)。<br>出队操作时，只需将dataStack栈顶元素弹出返回就可以。<br>(2) 入队容易出队麻烦：<br>声明两个栈，一个是存数据用的栈(dataStack)，一个是辅助用的栈(tempStack)。<br>入队操作时，只需要将入队元素压入dataStack就可以。<br>出队操作时，需要将dataStack全部元素出栈到tempStack中，tempStack弹出元素返回，然后再将tempStack剩下元素全部出栈到dataStack。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="<a id=" more"=""></a>"><!-- more --></h2><h2 id="u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF"><a href="#u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF" class="headerlink" title="理一理代码思路"></a>理一理代码思路</h2><p><strong>（1）.</strong> 入队麻烦出队容易<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; dataStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">Stack&lt;Integer&gt; tempStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 入队</span><br><span class="line"> * <span class="doctag">@param</span> item</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        tempStack.push(dataStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    tempStack.push(item);</span><br><span class="line">    <span class="keyword">while</span> (!tempStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        dataStack.push(tempStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 出队</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dataStack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF"><a href="#u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF" class="headerlink" title="理一理代码思路"></a>理一理代码思路</h2><p><strong>（1）.</strong> 入队麻烦出队容易<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; dataStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">Stack&lt;Integer&gt; tempStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 入队</span><br><span class="line"> * <span class="doctag">@param</span> item</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        tempStack.push(dataStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    tempStack.push(item);</span><br><span class="line">    <span class="keyword">while</span> (!tempStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        dataStack.push(tempStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 出队</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dataStack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>（2）.</strong> 入队容易出队麻烦<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; dataStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">Stack&lt;Integer&gt; tempStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 入队</span><br><span class="line"> * <span class="doctag">@param</span> item</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> item)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    dataStack.push(item);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 出队</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@throws</span> Exception</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"队列为空！"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> head=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!dataStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        tempStack.push(dataStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    head=tempStack.pop();</span><br><span class="line">    <span class="keyword">while</span> (!tempStack.isEmpty())</span><br><span class="line">    &#123;</span><br><span class="line">        dataStack.push(tempStack.pop());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="u4F18_u5316"><a href="#u4F18_u5316" class="headerlink" title="优化"></a>优化</h2><blockquote>
 <p><strong>思路：</strong>每次都要全部出栈全部出栈这样太麻烦，时间复杂度有点大。优化方案就是声明一个入队的栈(enStack)和一个出队的栈(deStack)。<br>入队时，将入队元素压入enStack中就可以。<br>出队时，做个判断，如果deStack为空，就将enStack的元素全部出栈压入deStack中，然后将deStack栈顶元素弹出返回即可。<br>这样，确实优化了。</p>
@@ -278,7 +290,7 @@
         <p><span>本文标题:</span><a href="/2016/02/03/算法学习-两个栈实现一个队列/">[算法学习]两个栈实现一个队列</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
         <p><span>发布时间:</span>2016年02月03日 - 13时47分</p>
-        <p><span>最后更新:</span>2016年02月03日 - 13时50分</p>
+        <p><span>最后更新:</span>2016年02月03日 - 14时07分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/03/算法学习-两个栈实现一个队列/" title="[算法学习]两个栈实现一个队列">https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/03/算法学习-两个栈实现一个队列/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
