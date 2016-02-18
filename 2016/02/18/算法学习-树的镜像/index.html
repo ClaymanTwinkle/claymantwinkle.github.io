@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Kesar的个人博客">
 <meta property="og:description" content="问题描述：  输出树的镜像。
 解法与分析： 根结点不变，左右子树交换。按照这一点进行递归，就可以解决问题。">
-<meta property="og:updated_time" content="2016-02-18T06:06:30.897Z">
+<meta property="og:updated_time" content="2016-02-18T06:15:47.563Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法学习]树的镜像">
 <meta name="twitter:description" content="问题描述：  输出树的镜像。
@@ -262,7 +262,9 @@
 <p><strong>问题描述：</strong>  输出树的镜像。</p>
 <p><strong>解法与分析：</strong> 根结点不变，左右子树交换。按照这一点进行递归，就可以解决问题。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="<a id=" more"=""></a>"><!-- more --></h2><h2 id="u53C2_u8003_u4EE3_u7801_u5982_u4E0B"><a href="#u53C2_u8003_u4EE3_u7801_u5982_u4E0B" class="headerlink" title="参考代码如下"></a>参考代码如下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TreeNode <span class="title">mirror</span><span class="params">(TreeNode root)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    TreeNode left=root.left;</span><br><span class="line">    TreeNode right=root.right;</span><br><span class="line">    root.right=mirror(left);</span><br><span class="line">    root.left=mirror(right);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<hr>
+<h2 id="u53C2_u8003_u4EE3_u7801_u5982_u4E0B"><a href="#u53C2_u8003_u4EE3_u7801_u5982_u4E0B" class="headerlink" title="参考代码如下"></a>参考代码如下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TreeNode <span class="title">mirror</span><span class="params">(TreeNode root)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    TreeNode left=root.left;</span><br><span class="line">    TreeNode right=root.right;</span><br><span class="line">    root.right=mirror(left);</span><br><span class="line">    root.left=mirror(right);</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>附：<a href="https://github.com/ClaymanTwinkle/SwordTest/blob/master/src/tree/MirroringTree.java" target="_blank" rel="external">源码地址</a></li>
 </ul>
@@ -277,7 +279,7 @@
         <p><span>本文标题:</span><a href="/2016/02/18/算法学习-树的镜像/">[算法学习]树的镜像</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
         <p><span>发布时间:</span>2016年02月18日 - 13时23分</p>
-        <p><span>最后更新:</span>2016年02月18日 - 14时06分</p>
+        <p><span>最后更新:</span>2016年02月18日 - 14时15分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/18/算法学习-树的镜像/" title="[算法学习]树的镜像">https://claymantwinkle.github.io/2016/02/18/算法学习-树的镜像/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/18/算法学习-树的镜像/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

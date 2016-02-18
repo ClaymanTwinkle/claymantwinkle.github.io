@@ -250,7 +250,6 @@
 <h1 id="u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52"><a href="#u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52" class="headerlink" title="解法一：用递归"></a>解法一：用递归</h1><blockquote>
 <p><strong>解法：</strong> 递归比较结点大小：每次递归，取出两个链表的头结点来比较，比较小的结点加入新链表中。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -343,7 +342,6 @@
 <li>当第二个指针和第一个指针指向的结点是同一个时，链表有环。</li>
 </ol>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -436,7 +434,6 @@
 <li>当第二个指针移动到最后一个节点时，第一个指针所指结点就是倒数第n个结点。</li>
 </ol>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -524,7 +521,6 @@
 <p><strong>问题描述：</strong>  返回链表的中间结点（如果是两个则返回两个）</p>
 <p><strong>解法与分析：</strong> 用两个指针移动的方法来解决问题。一个指针每次移动1个结点，另外一个指针移动2个结点。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -711,7 +707,6 @@
 <li>如何走？判断当前两个指针所指向二维数组中的值比搜索值大还是小，比搜索值大的话，向上走，比搜索值小的话，向右走。直到两个指针都停止不能走为止。</li>
 </ol>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -799,7 +794,6 @@
 <p><strong>问题描述：</strong>  返回将一维数组向右旋转k个位置的结果。<br>比如，一维数组{1,2,3,4,5}，k=2时，返回结果是{4,5,1,2,3}。 要求常数级空间复杂度，允许修改原有数组。</p>
 <p><strong>解法与分析：</strong> 使用三旋转：全部旋转一次，前面0到k-1旋转一次，后面k到数组最后一个数旋转一次，就可以解决问题。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -887,7 +881,6 @@
 <p><strong>问题描述：</strong> 顺时针打印矩阵<br>例如：<br>{<br> {1,2,3,4},<br> {5,6,7,8},<br> {9,10,11,12},<br> {13,14,15,16}<br>}<br>打印结果：1、2、3、4、8、12、16、15、14、13、9、5、6、7、11、10</p>
 <p><strong>解法与分析：</strong> 考虑几个特殊情况：行1列n，行n列1，行1列1。考虑到这几个后其实就不难了。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -975,7 +968,6 @@
 <p><strong>问题描述：</strong> 输入一组序列，奇数在前，偶数在后，输出整理后的序列。</p>
 <p><strong>解法与分析：</strong> 能马上想到用二分法，就很快能解决问题。</p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
@@ -1064,7 +1056,6 @@
 <p><strong>解法与分析：</strong> 不使用辅助空间。输入一组n个字符的数组，将打印出C(1,n)+…+C(n,n)=2^n个组合。<br>1.按照从1到n作为一个循环，每次输出C(i,n)个组合。这样，我们只需要处理如何输出一个C(i,n)就可以解决问题。<br>2.处理C(i,n)：i有两种特殊情况，一种是i=1，那么直接输出n个字符中每个字符就可以；一种是i=n，那么整个字符数组一起输出就可以。i&gt;1&amp;&amp;i&lt;n的情况，使用公式：C(i,n)=C(i-1,n)+C(i-1,n-1)，配合递归来解决问题。</p>
 <p><strong>类似的题型：</strong> <a href="http://claymantwinkle.github.io/2016/01/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-Java%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/">[算法学习]Java实现字符串全排列</a></p>
 </blockquote>
-<h2 id="3C_21-_more_-_3E"><a href="#3C_21-_more_-_3E" class="headerlink" title="
           
       
     </div>
