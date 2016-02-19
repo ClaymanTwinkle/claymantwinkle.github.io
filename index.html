@@ -217,6 +217,97 @@
 
       <div class="body-wrap">
   
+    <article id="post-算法学习-8皇后问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/19/算法学习-8皇后问题/" class="article-date">
+  	<time datetime="2016-02-19T07:18:52.000Z" itemprop="datePublished">2016-02-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/19/算法学习-8皇后问题/">[算法学习]8皇后问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p><strong>问题描述：</strong>  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？<br><strong>解法与分析：</strong></p>
+<ol>
+<li>首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。</li>
+<li>那么独占一列的情况，描述起来就像是实现{0,1,2,3,4,5,6,7}这个一维数组的全排列。</li>
+<li>最后要解决的是不能在同一对角线的判断：假设两个数载一维数组nums位置i，j，那么i，j在同一对角线的条件是 i-j = nums[i]-nums[j] || j-i = nums[i]-nums[j]。</li>
+</ol>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/19/算法学习-8皇后问题/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+
+  
     <article id="post-算法学习-后缀表达式转二叉树" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -990,95 +1081,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-计算出二进制数中1的个数/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-反转链表/" class="article-date">
-  	<time datetime="2016-02-18T05:17:38.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-反转链表/">[算法学习]反转链表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong> 输入一条链表，将链表反转后返回。</p>
-</blockquote>
-<h1 id="u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52"><a href="#u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52" class="headerlink" title="解法一：用递归"></a>解法一：用递归</h1><blockquote>
-<p><strong>解法：</strong> 由于反转后头结点会成为尾结点，尾结点会成会头结点。所以从头结点开始反转前后结点关系。比较简单，所以这里直接贴出代码。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-反转链表/#more">大航海 >></a>
         </p>
       
       <div class="clearfix"></div>

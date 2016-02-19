@@ -3,18 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>[算法学习]输入遍历重建二叉树 | Kesar的个人博客</title>
+  <title>[算法学习]8皇后问题 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述：假设二叉树中的值都不重复，(1) 输入前序遍历和中序遍历的结果，输出该二叉树；(2) 输入中序遍历和后序遍历的结果，输出该二叉树。">
+  <meta name="description" content="问题描述：  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？解法与分析：
+
+首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。
+那么独占一列的情况，描述起来就像是实现{0,1,2,3,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[算法学习]输入遍历重建二叉树">
-<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/02/算法学习-输入遍历重建二叉树/index.html">
+<meta property="og:title" content="[算法学习]8皇后问题">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/19/算法学习-8皇后问题/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="问题描述：假设二叉树中的值都不重复，(1) 输入前序遍历和中序遍历的结果，输出该二叉树；(2) 输入中序遍历和后序遍历的结果，输出该二叉树。">
-<meta property="og:updated_time" content="2016-02-03T05:49:23.005Z">
+<meta property="og:description" content="问题描述：  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？解法与分析：
+
+首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。
+那么独占一列的情况，描述起来就像是实现{0,1,2,3,">
+<meta property="og:updated_time" content="2016-02-19T07:19:32.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[算法学习]输入遍历重建二叉树">
-<meta name="twitter:description" content="问题描述：假设二叉树中的值都不重复，(1) 输入前序遍历和中序遍历的结果，输出该二叉树；(2) 输入中序遍历和后序遍历的结果，输出该二叉树。">
+<meta name="twitter:title" content="[算法学习]8皇后问题">
+<meta name="twitter:description" content="问题描述：  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？解法与分析：
+
+首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。
+那么独占一列的情况，描述起来就像是实现{0,1,2,3,">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -213,11 +222,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-算法学习-输入遍历重建二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法学习-8皇后问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/算法学习-输入遍历重建二叉树/" class="article-date">
-  	<time datetime="2016-02-02T06:42:09.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/19/算法学习-8皇后问题/" class="article-date">
+  	<time datetime="2016-02-19T07:18:52.000Z" itemprop="datePublished">2016-02-19</time>
 </a>
     </div>
   
@@ -230,7 +239,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [算法学习]输入遍历重建二叉树
+      [算法学习]8皇后问题
     </h1>
   
 
@@ -256,16 +265,19 @@
       
           
         <blockquote>
-<p><strong>问题描述：</strong><br>假设二叉树中的值都不重复，<br>(1) 输入前序遍历和中序遍历的结果，输出该二叉树；<br>(2) 输入中序遍历和后序遍历的结果，输出该二叉树。</p>
+<p><strong>问题描述：</strong>  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？<br><strong>解法与分析：</strong></p>
+<ol>
+<li>首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。</li>
+<li>那么独占一列的情况，描述起来就像是实现{0,1,2,3,4,5,6,7}这个一维数组的全排列。</li>
+<li>最后要解决的是不能在同一对角线的判断：假设两个数载一维数组nums位置i，j，那么i，j在同一对角线的条件是 i-j = nums[i]-nums[j] || j-i = nums[i]-nums[j]。</li>
+</ol>
 </blockquote>
 <a id="more"></a>
-<blockquote>
-<p><strong>分析：</strong><br><strong>(1)</strong> 由前序确定根节点，中序确定左右子树范围，然后用递归重复这段逻辑。根据前序遍历可知根节点在第一个的位置，根据这个根节点在中序遍历中的位置，左边是左子树，右边是右子树，然后根据中序遍历的左右子树范围判断出前序遍历中的左右子树，按照这个思路将左右子树当作新的遍历递归就可以。例如：前序遍历{1,2,4,7,3,5,6,8},中序遍历{4,7,2,1,5,3,8,6},由前序遍历知根节点是1，所以由中序知左子树序列是{4,7,2},右子树序列是{5,3,8,6}，前序中左子树序列的是{2,4,7}，右子树序列是{3,5,6,8}。然后将前序序列中的左子树和中序序列的左子树递归，前序序列中的右子树和中序序列的右子树递归。</p>
-<p><strong>(2)</strong> 跟(1)同样的思路，由后序确定根节点，中序确定左右子树的范围，然后也是使用递归。</p>
-</blockquote>
 <hr>
-<h2 id="u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF"><a href="#u7406_u4E00_u7406_u4EE3_u7801_u601D_u8DEF" class="headerlink" title="理一理代码思路"></a>理一理代码思路</h2><p><strong>（1）.</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> *</span><br><span class="line"> * 输入前序+中序</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> first</span><br><span class="line"> * <span class="doctag">@param</span> center</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TreeNode <span class="title">inputFirstAndCenter</span><span class="params">(<span class="keyword">int</span>[] first, <span class="keyword">int</span>[] center)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (first == <span class="keyword">null</span> || center == <span class="keyword">null</span> || first.length != center.length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> root_val = first[<span class="number">0</span>];</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(root_val);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; center.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (center[i] == root_val)</span><br><span class="line">        &#123;<span class="comment">// 这里要很小心，注意处理好边界判断</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 当中序数组第一个为根节点时说明这个根节点没有左子树，如果不是就有左子树</span></span><br><span class="line">            <span class="comment">// 前序数组：0是根节点，1~i是左子树，i+1后是右子树</span></span><br><span class="line">            <span class="comment">// 中序数组：i是根节点，0~i-1是左子树，i+1后市右子树</span></span><br><span class="line">            <span class="comment">// 边界情况是：只有根节点，只有左子树，只有右子树</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                root.left = inputFirstAndCenter(</span><br><span class="line">                        Arrays.copyOfRange(first, <span class="number">1</span>, i + <span class="number">1</span>),</span><br><span class="line">                        Arrays.copyOfRange(center, <span class="number">0</span>, i));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; first.length - <span class="number">1</span>)</span><br><span class="line">            &#123;<span class="comment">// 处理边界：中序数组中索引i的值是某一根节点，所以要i+1</span></span><br><span class="line">                root.right = inputFirstAndCenter(</span><br><span class="line">                        Arrays.copyOfRange(first, i + <span class="number">1</span>, first.length),</span><br><span class="line">                        Arrays.copyOfRange(center, i + <span class="number">1</span>, center.length));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输入的序列不匹配</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>（2）.</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 输入中序和后序</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@param</span> center</span><br><span class="line"> * <span class="doctag">@param</span> last</span><br><span class="line"> * <span class="doctag">@return</span></span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> TreeNode <span class="title">inputCenterAndLast</span><span class="params">(<span class="keyword">int</span>[] center, <span class="keyword">int</span>[] last)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (last == <span class="keyword">null</span> || center == <span class="keyword">null</span> || last.length != center.length)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> root_val = last[last.length - <span class="number">1</span>];</span><br><span class="line">    TreeNode root = <span class="keyword">new</span> TreeNode(root_val);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; center.length; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (center[i] == root_val)</span><br><span class="line">        &#123;<span class="comment">// 这里要很小心，注意处理好边界判断</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 后序数组：length-1是根节点，0~i-1是左子树，i~length-2后是右子树</span></span><br><span class="line">            <span class="comment">// 中序数组：i是根节点，0~i-1是左子树，i+1后市右子树</span></span><br><span class="line">            <span class="comment">// 边界情况是：只有根节点，只有左子树，只有右子树</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                root.left = inputCenterAndLast(</span><br><span class="line">                        Arrays.copyOfRange(center, <span class="number">0</span>, i),</span><br><span class="line">                        Arrays.copyOfRange(last, <span class="number">0</span>, i));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; center.length - <span class="number">1</span> &amp;&amp; center.length &gt; <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                root.right = inputCenterAndLast(</span><br><span class="line">                        Arrays.copyOfRange(center, i + <span class="number">1</span>, center.length),</span><br><span class="line">                        Arrays.copyOfRange(last, i, last.length - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输入的序列不匹配</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="u53C2_u8003_u4EE3_u7801_u5982_u4E0B"><a href="#u53C2_u8003_u4EE3_u7801_u5982_u4E0B" class="headerlink" title="参考代码如下"></a>参考代码如下</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@Description</span>: 打印所有"8皇后"的可能位置</span><br><span class="line"> * <span class="doctag">@param</span></span><br><span class="line"> * <span class="doctag">@return</span> void</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">eightQueen</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] queens = &#123; <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">    getAllArrange(queens, <span class="number">0</span>, queens.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * <span class="doctag">@Description</span>: 数组全排列筛选</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> nums</span><br><span class="line"> * <span class="doctag">@return</span> void</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getAllArrange</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(Arrays.toString(nums));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> isContinue = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt;= end; isContinue=<span class="keyword">false</span>,i++)</span><br><span class="line">    &#123;</span><br><span class="line">        exch(nums, start, i);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a = start - <span class="number">1</span>; a &gt;= <span class="number">0</span>; a--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (isDiagonal(nums, a, start))</span><br><span class="line">            &#123;</span><br><span class="line">                exch(nums, start, i);</span><br><span class="line">                isContinue=<span class="keyword">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(isContinue)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        getAllArrange(nums, start + <span class="number">1</span>, end);</span><br><span class="line">        exch(nums, start, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@Description</span>: 判断两个位置是否在同一对角线上</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> nums</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> i</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> j</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@return</span></span><br><span class="line"> * <span class="doctag">@return</span> boolean</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isDiagonal</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = nums[i] - nums[j];</span><br><span class="line">    <span class="keyword">return</span> (i - j) == result || (j - i) == result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@Description</span>: 交换数组中的两个数的值</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> nums</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> i</span><br><span class="line"> * <span class="doctag">@param</span> <span class="doctag">@param</span> j</span><br><span class="line"> * <span class="doctag">@return</span> void</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">exch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i == j)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    nums[i] ^= nums[j];</span><br><span class="line">    nums[j] ^= nums[i];</span><br><span class="line">    nums[i] ^= nums[j];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>附：<a href="https://github.com/ClaymanTwinkle/SwordTest/blob/master/src/array/EightQueen.java" target="_blank" rel="external">源码地址</a></li>
+</ul>
 
       
     </div>
@@ -274,13 +286,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/02/算法学习-输入遍历重建二叉树/">[算法学习]输入遍历重建二叉树</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/19/算法学习-8皇后问题/">[算法学习]8皇后问题</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
-        <p><span>发布时间:</span>2016年02月02日 - 14时42分</p>
-        <p><span>最后更新:</span>2016年02月03日 - 13时49分</p>
+        <p><span>发布时间:</span>2016年02月19日 - 15时18分</p>
+        <p><span>最后更新:</span>2016年02月19日 - 15时19分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/02/算法学习-输入遍历重建二叉树/" title="[算法学习]输入遍历重建二叉树">https://claymantwinkle.github.io/2016/02/02/算法学习-输入遍历重建二叉树/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/02/算法学习-输入遍历重建二叉树/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/19/算法学习-8皇后问题/" title="[算法学习]8皇后问题">https://claymantwinkle.github.io/2016/02/19/算法学习-8皇后问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/19/算法学习-8皇后问题/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -293,18 +305,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/02/03/算法学习-两个栈实现一个队列/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [算法学习]两个栈实现一个队列
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/29/算法学习-斐波那契数计算/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[算法学习]斐波那契数计算</div>
+    <a href="/2016/02/18/算法学习-后缀表达式转二叉树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[算法学习]后缀表达式转二叉树</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -330,7 +333,7 @@
 
     <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/02/算法学习-输入遍历重建二叉树/" data-title="[算法学习]输入遍历重建二叉树" data-url="https://claymantwinkle.github.io/2016/02/02/算法学习-输入遍历重建二叉树/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/19/算法学习-8皇后问题/" data-title="[算法学习]8皇后问题" data-url="https://claymantwinkle.github.io/2016/02/19/算法学习-8皇后问题/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -355,15 +358,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/03/算法学习-两个栈实现一个队列/" title="上一篇: [算法学习]两个栈实现一个队列">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/29/算法学习-斐波那契数计算/" title="下一篇: [算法学习]斐波那契数计算">
+            <a href="/2016/02/18/算法学习-后缀表达式转二叉树/" title="下一篇: [算法学习]后缀表达式转二叉树">
                 <i class="fa fa-angle-right"></i>
             </a>
         

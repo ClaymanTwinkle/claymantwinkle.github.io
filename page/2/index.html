@@ -217,6 +217,95 @@
 
       <div class="body-wrap">
   
+    <article id="post-算法学习-反转链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/算法学习-反转链表/" class="article-date">
+  	<time datetime="2016-02-18T05:17:38.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/算法学习-反转链表/">[算法学习]反转链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <blockquote>
+<p><strong>问题描述：</strong> 输入一条链表，将链表反转后返回。</p>
+</blockquote>
+<h1 id="u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52"><a href="#u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52" class="headerlink" title="解法一：用递归"></a>解法一：用递归</h1><blockquote>
+<p><strong>解法：</strong> 由于反转后头结点会成为尾结点，尾结点会成会头结点。所以从头结点开始反转前后结点关系。比较简单，所以这里直接贴出代码。</p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/18/算法学习-反转链表/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+    
+        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+        <script>
+            var yiliaConfig = {
+            fancybox: true,
+            mathjax: true,
+            animate: true,
+            isHome: true,
+            isPost: false,
+            isArchive: false,
+            isTag: false,
+            isCategory: false,
+            open_in_new: false
+            }
+        </script>
+        
+
+  
     <article id="post-算法学习-合并两个排序的链表" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -988,94 +1077,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-整数序列的奇偶分类/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-Java实现字符序列全组合" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-Java实现字符序列全组合/" class="article-date">
-  	<time datetime="2016-02-18T05:06:49.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-Java实现字符序列全组合/">[算法学习]Java实现字符序列全组合</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong> 假设数组中字符无重复，输入一个字符数组，打印出字符的全部组合。例如：输入{a,b,c}输出a、b、c、ab、ac、bc、abc</p>
-<p><strong>解法与分析：</strong> 不使用辅助空间。输入一组n个字符的数组，将打印出C(1,n)+…+C(n,n)=2^n个组合。<br>1.按照从1到n作为一个循环，每次输出C(i,n)个组合。这样，我们只需要处理如何输出一个C(i,n)就可以解决问题。<br>2.处理C(i,n)：i有两种特殊情况，一种是i=1，那么直接输出n个字符中每个字符就可以；一种是i=n，那么整个字符数组一起输出就可以。i&gt;1&amp;&amp;i&lt;n的情况，使用公式：C(i,n)=C(i-1,n)+C(i-1,n-1)，配合递归来解决问题。</p>
-<p><strong>类似的题型：</strong> <a href="http://claymantwinkle.github.io/2016/01/23/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0-Java%E5%AE%9E%E7%8E%B0%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%85%A8%E6%8E%92%E5%88%97/">[算法学习]Java实现字符串全排列</a></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-Java实现字符序列全组合/#more">大航海 >></a>
         </p>
       
       <div class="clearfix"></div>
