@@ -6,21 +6,24 @@
   <title>[算法学习]A星算法 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是从起点到当前结点的实际路径代价(为啥叫实际？就是已经走过了，边走边将代价计算">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[算法学习]A星算法">
 <meta property="og:url" content="https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
 <meta property="og:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是从起点到当前结点的实际路径代价(为啥叫实际？就是已经走过了，边走边将代价计算">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115548849-1134816426.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115549380-268319016.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115550146-518802981.jpg">
-<meta property="og:updated_time" content="2016-02-25T04:31:15.689Z">
+<meta property="og:updated_time" content="2016-02-25T05:00:25.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法学习]A星算法">
 <meta name="twitter:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是从起点到当前结点的实际路径代价(为啥叫实际？就是已经走过了，边走边将代价计算">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -263,15 +266,14 @@
           
         <h3 id="u4E00_u3001_u9002_u7528_u573A_u666F"><a href="#u4E00_u3001_u9002_u7528_u573A_u666F" class="headerlink" title="一、适用场景"></a>一、适用场景</h3><p>在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。</p>
 <h3 id="u4E8C_u3001_u7B97_u6CD5_u601D_u8DEF"><a href="#u4E8C_u3001_u7B97_u6CD5_u601D_u8DEF" class="headerlink" title="二、算法思路"></a>二、算法思路</h3><h4 id="1-__u56DE_u6EAF_u6CD5_u5F97_u5230_u8DEF_u5F84"><a href="#1-__u56DE_u6EAF_u6CD5_u5F97_u5230_u8DEF_u5F84" class="headerlink" title="1. 回溯法得到路径"></a>1. 回溯法得到路径</h4><p>(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。</p>
-<a id="more"></a>
-<h4 id="2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H"><a href="#2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H" class="headerlink" title="2. 路径代价的估算：F = G+H"></a>2. 路径代价的估算：F = G+H</h4><p>A星算法的代价计算使用了被称作是启发式的代价函数。<br>先说明一下各符号意义：G表示的是 <strong> 从起点到当前结点的实际路径代价 </strong> (为啥叫实际？就是已经走过了，边走边将代价计算好了)；H表示 <strong> 当前结点到达最终结点的估计代价 </strong> (为啥叫估计？就是还没走过，不知道前面有没障碍、路通不通，所以只能用估计)；F表示 <strong> 当前结点所在路径从起点到最终点预估的总路径代价 </strong> 。</p>
+<h4 id="2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H"><a href="#2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H" class="headerlink" title="2. 路径代价的估算：F = G+H"></a>2. 路径代价的估算：F = G+H</h4><p>A星算法的代价计算使用了被称作是启发式的代价函数。<br>先说明一下各符号意义：G表示的是<strong>从起点到当前结点的实际路径代价</strong>(为啥叫实际？就是已经走过了，边走边将代价计算好了)；H表示<strong>当前结点到达最终结点的估计代价</strong>(为啥叫估计？就是还没走过，不知道前面有没障碍、路通不通，所以只能用估计)；F表示<strong>当前结点所在路径从起点到最终点预估的总路径代价</strong>。</p>
 <p>G的计算方式：计算方式有挺多种的，这里我们就用这种吧，假设每个结点代表一个正方形，横竖移动距离：斜移动距离=1：1.4（根号2），我们取个整数10和14吧，也就是说当前结点G值=父节点的G+（10或14）。</p>
 <p>H的计算方式：估价计算也有很多种方式，我们这里使用“曼哈顿”法，H=|当前结点x值-最终结点x值|+|当前结点y值-最终结点y值|（”||”表示绝对值）。</p>
 <p>如下图（图不是自己做的，从网上借来的，自己画的话~…惨不忍睹！）<br><img src="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115548849-1134816426.jpg" alt=""></p>
-<h4 id="3-__u8F85_u52A9_u8868_uFF1AOpen_u3001Close_u5217_u8868"><a href="#3-__u8F85_u52A9_u8868_uFF1AOpen_u3001Close_u5217_u8868" class="headerlink" title="3. 辅助表：Open、Close列表"></a>3. 辅助表：Open、Close列表</h4><p>在A星算法中，需要使用两个辅助表来记录结点。<br>一个用于 <strong> 记录可被访问的结点 </strong> ，成为Open表；一个是 <strong> 记录已访问过的结点 </strong> ，称为Close表。<br><strong> 这两个表决定了算法的结束：条件是最终结点在Close表中(找到路径)或Open表为空(找不到了路径)。 </strong></p>
+<h4 id="3-__u8F85_u52A9_u8868_uFF1AOpen_u3001Close_u5217_u8868"><a href="#3-__u8F85_u52A9_u8868_uFF1AOpen_u3001Close_u5217_u8868" class="headerlink" title="3. 辅助表：Open、Close列表"></a>3. 辅助表：Open、Close列表</h4><p>在A星算法中，需要使用两个辅助表来记录结点。<br>一个用于<strong>记录可被访问的结点</strong>，成为Open表；一个是<strong>记录已访问过的结点</strong>，称为Close表。<br><strong>这两个表决定了算法的结束：条件是最终结点在Close表中(找到路径)或Open表为空(找不到了路径)。</strong></p>
 <h4 id="4-__u79FB_u52A8_u7ED3_u70B9_u3001_u76F8_u90BB_u7ED3_u70B9_u7684_u5904_u7406"><a href="#4-__u79FB_u52A8_u7ED3_u70B9_u3001_u76F8_u90BB_u7ED3_u70B9_u7684_u5904_u7406" class="headerlink" title="4. 移动结点、相邻结点的处理"></a>4. 移动结点、相邻结点的处理</h4><p>上面的理解的话，现在就来移动当前的节点，寻找路径。</p>
-<p>每次从Open表中取出F值最小的结点出来（<strong> 这里我们使用优先队列来处理比较好 </strong>），作为当前结点；然后将当前结点的所有邻结点按照 <strong> 邻结点规则 </strong> 加入到Open表中；最后将当前结点放入Close表中，这里就是每次循环的执行内容。</p>
-<p><strong> 邻结点规则 </strong>：<br>(1) 当邻结点不在地图中，不加入Open表；<br>(2) 当邻结点是障碍物，不加入Open表；<br>(3) 当邻结点在Close表中，不加入Open表；<br>(4) 当邻结点不在Open中，加入Open表，<strong> 设该邻结点的父节点为当前结点 </strong>；<br>(5)  <strong> 当邻结点在Open表中，我们需要做个比较:如果邻结点的G值&gt;当前结点的G值+当前结点到这个邻结点的代价，那么修改该邻结点的父节点为当前的结点(因为在Open表中的结点除了起点，都会有父节点)，修改G值=当前结点的G值+当前结点到这个邻结点的代价 </strong></p>
+<p>每次从Open表中取出F值最小的结点出来（<strong>这里我们使用优先队列来处理比较好</strong>），作为当前结点；然后将当前结点的所有邻结点按照<strong>邻结点规则</strong>加入到Open表中；最后将当前结点放入Close表中，这里就是每次循环的执行内容。</p>
+<p><strong>邻结点规则</strong>：<br>(1) 当邻结点不在地图中，不加入Open表；<br>(2) 当邻结点是障碍物，不加入Open表；<br>(3) 当邻结点在Close表中，不加入Open表；<br>(4) 当邻结点不在Open中，加入Open表，<strong>设该邻结点的父节点为当前结点</strong>；<br>(5) <strong>当邻结点在Open表中，我们需要做个比较:如果邻结点的G值&gt;当前结点的G值+当前结点到这个邻结点的代价，那么修改该邻结点的父节点为当前的结点(因为在Open表中的结点除了起点，都会有父节点)，修改G值=当前结点的G值+当前结点到这个邻结点的代价 </strong></p>
 <p>蓝色框框表示在Close表中，绿色的框框表示在Open表中<br><img src="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115549380-268319016.jpg" alt=""><br>最后回溯得到路径<br><img src="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115550146-518802981.jpg" alt=""></p>
 <h3 id="u4E09_u3001_u4EE3_u7801_u5B9E_u73B0_28Java_29"><a href="#u4E09_u3001_u4EE3_u7801_u5B9E_u73B0_28Java_29" class="headerlink" title="三、代码实现(Java)"></a>三、代码实现(Java)</h3><h4 id="1-__u8F93_u5165"><a href="#1-__u8F93_u5165" class="headerlink" title="1. 输入"></a>1. 输入</h4><p>(1) 代表地图二值二维数组(0表示可通路，1表示路障)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] maps = &#123;</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;,</span><br><span class="line">                &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;</span><br><span class="line">                &#125;;</span><br></pre></td></tr></table></figure></p>
 <p>(2) 按照二维数组的特点，坐标原点在左上角，所以y是高，x是宽，y向下递增，x向右递增，我们将x和y封装成一个类，好传参，重写equals方法比较坐标(x,y)是不是同一个。</p>
@@ -307,7 +309,7 @@
         <p><span>本文标题:</span><a href="/2016/02/25/算法学习-A星算法/">[算法学习]A星算法</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
         <p><span>发布时间:</span>2016年02月25日 - 12时00分</p>
-        <p><span>最后更新:</span>2016年02月25日 - 12时31分</p>
+        <p><span>最后更新:</span>2016年02月25日 - 13时00分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/25/算法学习-A星算法/" title="[算法学习]A星算法">https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
