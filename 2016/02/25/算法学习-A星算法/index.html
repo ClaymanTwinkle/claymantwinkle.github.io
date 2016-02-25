@@ -3,17 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Kesar的个人博客</title>
+  <title>[算法学习]A星算法 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kesar&apos;s blog | java | Android">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kesar的个人博客">
-<meta property="og:url" content="https://claymantwinkle.github.io/index.html">
+  <meta name="description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[算法学习]A星算法">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
-<meta property="og:description" content="Kesar&apos;s blog | java | Android">
+<meta property="og:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115548849-1134816426.jpg">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115549380-268319016.jpg">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115550146-518802981.jpg">
+<meta property="og:updated_time" content="2016-02-25T04:01:32.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kesar的个人博客">
-<meta name="twitter:description" content="Kesar&apos;s blog | java | Android">
+<meta name="twitter:title" content="[算法学习]A星算法">
+<meta name="twitter:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
+2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -21,9 +31,6 @@
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
 	<script>
@@ -215,9 +222,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-算法学习-A星算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法学习-A星算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/02/25/算法学习-A星算法/" class="article-date">
@@ -233,12 +238,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/25/算法学习-A星算法/">[算法学习]A星算法</a>
+    <h1 class="article-title" itemprop="name">
+      [算法学习]A星算法
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -282,214 +302,110 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-
     
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-8皇后问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/19/算法学习-8皇后问题/" class="article-date">
-  	<time datetime="2016-02-19T07:18:52.000Z" itemprop="datePublished">2016-02-19</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/19/算法学习-8皇后问题/">[算法学习]8皇后问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  国际象棋的“8皇后问题”：在8x8的国际象棋上摆放8个皇后，使其不能互相攻击，即8个皇后中任意两个不得处在同一行、同一列或同一对角线上。共有多少种符合条件的摆法？<br><strong>解法与分析：</strong></p>
-<ol>
-<li>首先是不能同一列同一行，那么每个皇后必须各独占一行一列，使用二维数组来描述就有点浪费空间了。这里我们使用一个8个元素的一维数组来表示每个皇后的每一行。</li>
-<li>那么独占一列的情况，描述起来就像是实现{0,1,2,3,4,5,6,7}这个一维数组的全排列。</li>
-<li>最后要解决的是不能在同一对角线的判断：假设两个数载一维数组nums位置i，j，那么i，j在同一对角线的条件是 i-j = nums[i]-nums[j] || j-i = nums[i]-nums[j]。</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/19/算法学习-8皇后问题/#more">大航海 >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/25/算法学习-A星算法/">[算法学习]A星算法</a></p>
+        <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
+        <p><span>发布时间:</span>2016年02月25日 - 12时00分</p>
+        <p><span>最后更新:</span>2016年02月25日 - 12时01分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/25/算法学习-A星算法/" title="[算法学习]A星算法">https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-后缀表达式转二叉树" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-后缀表达式转二叉树/" class="article-date">
-  	<time datetime="2016-02-18T05:25:07.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-后缀表达式转二叉树/">[算法学习]后缀表达式转二叉树</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong> 输入后缀表达式，输出后缀表达式的二叉树。</p>
-<p><strong>解法与分析：</strong> </p>
-<ol>
-<li>根据后缀表达式的特点，我们可以知道，只要是运算符的就都是根结点。</li>
-<li>我们这里需要使用一个栈来保存字符。遍历后缀表达式，每当遇到是非运算符的字符，就将它入栈，当遇到是运算符，就将栈中前两个结点出栈，和运算符组成一棵子树，然后入栈。遍历完成后，栈中剩下的唯一的一个结点就是该后缀表达式的二叉树的根结点。</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-后缀表达式转二叉树/#more">大航海 >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2016/02/19/算法学习-8皇后问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[算法学习]8皇后问题</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
+    <div class="bdsharebuttonbox">
+<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
+    <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/02/25/算法学习-A星算法/" data-title="[算法学习]A星算法" data-url="https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kesar"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = '/js/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/19/算法学习-8皇后问题/" title="下一篇: [算法学习]8皇后问题">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/25/算法学习-A星算法/">[算法学习]A星算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/算法学习-8皇后问题/">[算法学习]8皇后问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-后缀表达式转二叉树/">[算法学习]后缀表达式转二叉树</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-树的广度遍历/">[算法学习]树的广度遍历</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-树的镜像/">[算法学习]树的镜像</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-树的子结构/">[算法学习]树的子结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-打印树的路径/">[算法学习]打印树的路径</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-二叉搜索树转双向链表/">[算法学习]二叉搜索树转双向链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-栈的出栈序列/">[算法学习]栈的出栈序列</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-栈中的最小值/">[算法学习]栈中的最小值</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-计算出二进制数中1的个数/">[算法学习]计算出二进制数中1的个数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-反转链表/">[算法学习]反转链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-合并两个排序的链表/">[算法学习]合并两个排序的链表</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-判断链表是否是环结构/">[算法学习]判断链表是否是环结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-求出链表中倒数第n个节点/">[算法学习]求出链表中倒数第n个节点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-求链表的中间结点/">[算法学习]求链表的中间结点</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-复杂链表的复制/">[算法学习]复杂链表的复制</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-二维数组的查找/">[算法学习]二维数组的查找</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-数组的旋转/">[算法学习]数组的旋转</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-顺时针打印矩阵/">[算法学习[算法学习]顺时针打印矩阵</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-整数序列的奇偶分类/">[算法学习]整数序列的奇偶分类</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/算法学习-Java实现字符序列全组合/">[算法学习]Java实现字符序列全组合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/算法学习-两个栈实现一个队列/">[算法学习]两个栈实现一个队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/算法学习-输入遍历重建二叉树/">[算法学习]输入遍历重建二叉树</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/29/算法学习-斐波那契数计算/">[算法学习]斐波那契数计算</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/算法学习-给定一个整型数组，找出两个整数为指定整数的和-3/">[算法学习]给定一个整型数组，找出两个整数为指定整数的和(3)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/28/算法学习-给定一个整型数组，找出两个整数为指定整数的和-2/">[算法学习]给定一个整型数组，找出两个整数为指定整数的和(2)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/27/算法学习-给定一个整型数组，找出两个整数为指定整数的和-1/">[算法学习]给定一个整型数组，找出两个整数为指定整数的和(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/算法学习-Java实现字符串全排列/">[算法学习]Java实现字符串全排列</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/23/java学习-移位运算交换两数的值的出错情况/">[java学习]移位运算交换两数的值的出错情况</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/20/ubuntu下使用hexo搭建博客/">ubuntu下使用hexo搭建博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/13/C-学习-奇怪的除法/">[C++学习]奇怪的除法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/几种访问谷歌的方法/">几种访问谷歌的方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/Android-管理多个fragment-处理Activity被回收的情况/">Android 管理多个fragment(处理Activity被回收的情况)</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200);
+            }
+            else {
+                $(".switch-btn, .switch-area").toggle(200);
+            }
+        })
+    </script>
 
 
 
@@ -501,8 +417,8 @@
             fancybox: true,
             mathjax: true,
             animate: true,
-            isHome: true,
-            isPost: false,
+            isHome: false,
+            isPost: true,
             isArchive: false,
             isTag: false,
             isCategory: false,
@@ -510,642 +426,6 @@
             }
         </script>
         
-
-  
-    <article id="post-算法学习-树的广度遍历" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-树的广度遍历/" class="article-date">
-  	<time datetime="2016-02-18T05:24:27.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-树的广度遍历/">[算法学习]树的广度遍历</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  从上层向下层遍历，从左向右打印出一棵树  。</p>
-<p><strong>解法与分析：</strong> 广度遍历，按照从左向右的方式，我们可以使用队列来保存每一层的结点，每次结点出队，将出队结点的子结点入队，直至队列为空，就可以打印出符合要求的树遍历。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-树的广度遍历/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-树的镜像" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-树的镜像/" class="article-date">
-  	<time datetime="2016-02-18T05:23:45.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-树的镜像/">[算法学习]树的镜像</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  输出树的镜像。</p>
-<p><strong>解法与分析：</strong> 根结点不变，左右子树交换。按照这一点进行递归，就可以解决问题。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-树的镜像/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-树的子结构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-树的子结构/" class="article-date">
-  	<time datetime="2016-02-18T05:23:03.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-树的子结构/">[算法学习]树的子结构</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  判断树A是否是树B的子结构。</p>
-<p><strong>解法与分析：</strong> 使用递归的方式很容易解决。先进行根结点比较，相等的话，递归左右子树。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-树的子结构/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-打印树的路径" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-打印树的路径/" class="article-date">
-  	<time datetime="2016-02-18T05:22:02.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-打印树的路径/">[算法学习]打印树的路径</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  输入一个整数sum和一棵二叉树，打印出二叉树中结点和为sum的所有路径。 （路径：从根结点往下一直到叶结点形成的一条路径。）</p>
-<p><strong>解法与分析：</strong></p>
-<ol>
-<li>需要从树上的根结点遍历到叶子结点，其中需要累加经过结点的值。</li>
-<li>当累加到叶子结点时，比较累加结点值和sum的值，如果相等，打印出路径；如果不相等，返回到上一层，寻找其他叶子结点。</li>
-<li>需要保存结点路径，还可以返回到上一个结点，可以选择用栈来保存经过结点。</li>
-<li>可以使用递归来描述这个解法。</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-打印树的路径/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-二叉搜索树转双向链表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-二叉搜索树转双向链表/" class="article-date">
-  	<time datetime="2016-02-18T05:21:09.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-二叉搜索树转双向链表/">[算法学习]二叉搜索树转双向链表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  将一棵二叉搜索树转成一条排序好的双向链表。要求不能创建新结点。</p>
-<p><strong>解法与分析：</strong></p>
-<ol>
-<li>由于左子树&lt;根结点&lt;右子树，所以双向链表的头结点是二叉搜索树左子树中的最后一个左结点，双向链表的头结点是二叉搜索树右子树中的最后一个右结点，根结点则是链表的中间结点。</li>
-<li>将树结点中指向左孩子的指针作为双向链表中的前驱指针，指向右孩子的指针作为双向链表指向后继结点的指针。</li>
-<li>按照上面分析，可以使用树的中序遍历来转换双向链表。这里我们使用递归的方式来实现中序遍历+双向链表转换。</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-二叉搜索树转双向链表/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-栈的出栈序列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-栈的出栈序列/" class="article-date">
-  	<time datetime="2016-02-18T05:20:27.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-栈的出栈序列/">[算法学习]栈的出栈序列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  输入数字不重复的两组整数序列：压栈的序列A,出栈的序列B，验证AB是否为同一栈的序列。</p>
-<p><strong>解法与分析：</strong></p>
-<ol>
-<li>使用两个指针pA，pB分别在两个序列A，B上遍历。</li>
-<li>做个这样的判断，首先判断两个指针所指元素是否相等，若相等，则两个指针同时推进；若不相等，取出栈顶元素作比较；若与栈顶元素不相等，则序列A的元素入栈，pA指针向前推进，若与栈顶元素相等，则出栈，pB指针推进。</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-栈的出栈序列/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-    <article id="post-算法学习-栈中的最小值" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-栈中的最小值/" class="article-date">
-  	<time datetime="2016-02-18T05:19:26.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-栈中的最小值/">[算法学习]栈中的最小值</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <blockquote>
-<p><strong>问题描述：</strong>  实现栈的pop、push、 min (得到栈中最小值)方法。</p>
-<p><strong>解法与分析：</strong></p>
-<ol>
-<li>由于每次压栈和出栈都可能会改变栈中的最小值，所以，我们增加一个存放最小值的栈。</li>
-<li>当出栈操作时，最小值的栈也出栈；(当然，必须判断栈是否为空)</li>
-<li>当压栈操作时，比较压栈元素值和最小栈的栈顶元素的大小，若比较小，则将它压入栈中，若不是，则将最小栈的栈顶元素重复压栈。(当然，必须判断栈是否为空)</li>
-</ol>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-栈中的最小值/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-    
-        <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-        <script>
-            var yiliaConfig = {
-            fancybox: true,
-            mathjax: true,
-            animate: true,
-            isHome: true,
-            isPost: false,
-            isArchive: false,
-            isTag: false,
-            isCategory: false,
-            open_in_new: false
-            }
-        </script>
-        
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
 </div>
       <footer id="footer">
     <div class="outer">
@@ -1182,8 +462,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
