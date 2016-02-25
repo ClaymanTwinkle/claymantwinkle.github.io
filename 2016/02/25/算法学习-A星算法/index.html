@@ -6,24 +6,21 @@
   <title>[算法学习]A星算法 | Kesar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
-2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[算法学习]A星算法">
 <meta property="og:url" content="https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/index.html">
 <meta property="og:site_name" content="Kesar的个人博客">
 <meta property="og:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
-2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115548849-1134816426.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115549380-268319016.jpg">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/824857/201602/824857-20160225115550146-518802981.jpg">
-<meta property="og:updated_time" content="2016-02-25T04:01:32.193Z">
+<meta property="og:updated_time" content="2016-02-25T04:31:15.689Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法学习]A星算法">
 <meta name="twitter:description" content="一、适用场景在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。
-二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。
-2. 路径代价的估算：F = G+HA星算法的代价计算使用了被称作是启发式的代价函数。先说明一下各符号意义：G表示的是  从起点到当前结点的实际路径代价  (为啥叫实际？就是已经走过了，边走边将">
+二、算法思路1. 回溯法得到路径(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -266,6 +263,7 @@
           
         <h3 id="u4E00_u3001_u9002_u7528_u573A_u666F"><a href="#u4E00_u3001_u9002_u7528_u573A_u666F" class="headerlink" title="一、适用场景"></a>一、适用场景</h3><p>在一张地图中，绘制从起点移动到终点的最优路径，地图中会有障碍物，必须绕开障碍物。</p>
 <h3 id="u4E8C_u3001_u7B97_u6CD5_u601D_u8DEF"><a href="#u4E8C_u3001_u7B97_u6CD5_u601D_u8DEF" class="headerlink" title="二、算法思路"></a>二、算法思路</h3><h4 id="1-__u56DE_u6EAF_u6CD5_u5F97_u5230_u8DEF_u5F84"><a href="#1-__u56DE_u6EAF_u6CD5_u5F97_u5230_u8DEF_u5F84" class="headerlink" title="1. 回溯法得到路径"></a>1. 回溯法得到路径</h4><p>(如果有路径)采用“结点与结点的父节点”的关系从最终结点回溯到起点，得到路径。</p>
+<a id="more"></a>
 <h4 id="2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H"><a href="#2-__u8DEF_u5F84_u4EE3_u4EF7_u7684_u4F30_u7B97_uFF1AF__3D_G+H" class="headerlink" title="2. 路径代价的估算：F = G+H"></a>2. 路径代价的估算：F = G+H</h4><p>A星算法的代价计算使用了被称作是启发式的代价函数。<br>先说明一下各符号意义：G表示的是 <strong> 从起点到当前结点的实际路径代价 </strong> (为啥叫实际？就是已经走过了，边走边将代价计算好了)；H表示 <strong> 当前结点到达最终结点的估计代价 </strong> (为啥叫估计？就是还没走过，不知道前面有没障碍、路通不通，所以只能用估计)；F表示 <strong> 当前结点所在路径从起点到最终点预估的总路径代价 </strong> 。</p>
 <p>G的计算方式：计算方式有挺多种的，这里我们就用这种吧，假设每个结点代表一个正方形，横竖移动距离：斜移动距离=1：1.4（根号2），我们取个整数10和14吧，也就是说当前结点G值=父节点的G+（10或14）。</p>
 <p>H的计算方式：估价计算也有很多种方式，我们这里使用“曼哈顿”法，H=|当前结点x值-最终结点x值|+|当前结点y值-最终结点y值|（”||”表示绝对值）。</p>
@@ -309,7 +307,7 @@
         <p><span>本文标题:</span><a href="/2016/02/25/算法学习-A星算法/">[算法学习]A星算法</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 Kesar 个人博客">Kesar</a></p>
         <p><span>发布时间:</span>2016年02月25日 - 12时00分</p>
-        <p><span>最后更新:</span>2016年02月25日 - 12时01分</p>
+        <p><span>最后更新:</span>2016年02月25日 - 12时31分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/25/算法学习-A星算法/" title="[算法学习]A星算法">https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/</a>
             <span class="copy-path" data-clipboard-text="原文: https://claymantwinkle.github.io/2016/02/25/算法学习-A星算法/　　作者: Kesar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
