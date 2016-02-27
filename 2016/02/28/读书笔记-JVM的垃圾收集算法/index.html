@@ -15,7 +15,7 @@
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg">
-<meta property="og:updated_time" content="2016-02-27T16:10:36.253Z">
+<meta property="og:updated_time" content="2016-02-27T16:12:14.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[读书笔记]JVM的垃圾收集算法">
 <meta name="twitter:description" content="1.标记-清除算法（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。">
@@ -224,10 +224,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5"><a href="#1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5" class="headerlink" title="1.标记-清除算法"></a>1.标记-清除算法</h4><p>（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。<br><a id="more"></a><br>（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。<br>标记-清除算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg" alt=""></p>
-<h4 id="2-_u590D_u5236_u7B97_u6CD5"><a href="#2-_u590D_u5236_u7B97_u6CD5" class="headerlink" title="2.复制算法"></a>2.复制算法</h4><p>（1）算法思想：内存区分成两部分大小相等的区域。一半作为使用区，一半作为保留区。申请内存时，在使用区进行。GC时，我们将使用区的将被存活的对象复制到保留区，然后将使用区清空，这时我们将原使用区作为下次操作的保留区，原保留区作为下次申请内存操作的使用区。<br>（2）缺点：可使用内存减少了一半。<br>（3）其他算法策略：IMB公司根据新生代特点（死得快）将内存区分成9:1，其中包括80%的Eden和20%Surviver，Surviver区中取10%作为保留区，剩下90%都作为使用区。假如保留区不够怎么办？将多出的存活对象通过分配担保机制进入老年代。优点，针对存活率低的新生代，因为复制操作进行得少，效率高，并且作为保留区的空间较少；缺点，最坏的高存活率情况，复制操作会比较多，效率会变低，保留区空间小，不够用，需要额外空间。<br>复制算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png" alt=""></p>
-<h4 id="3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5"><a href="#3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5" class="headerlink" title="3.标记-整理算法"></a>3.标记-整理算法</h4><p>（1）算法思想：第一步与“标记-清除”算法一样，标记所有需要被回收的对象，第二部，存活对象向一端移动，然后直接清除端边界以外的内存。<br>（2）缺点：只是针对高存活率的老年代。<br>标记-整理算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg" alt=""></p>
-<h4 id="4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5"><a href="#4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5" class="headerlink" title="4.分代收集算法"></a>4.分代收集算法</h4><p>算法思想：结合前三种算法的优点，利用对象存活周期的特点划分年代。比如，高死亡率低存活率的新生代，可以使用复制算法，复制操作少，效率高，也没有额外空间对它进行分配担当；对于高存活率的老年代，就可以使用标记-清除算法或者标记-整理算法，提高收集效率。</p>
+        <h3 id="1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5"><a href="#1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5" class="headerlink" title="1.标记-清除算法"></a>1.标记-清除算法</h3><p>（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。<br><a id="more"></a><br>（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。<br>标记-清除算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg" alt=""></p>
+<h3 id="2-_u590D_u5236_u7B97_u6CD5"><a href="#2-_u590D_u5236_u7B97_u6CD5" class="headerlink" title="2.复制算法"></a>2.复制算法</h3><p>（1）算法思想：内存区分成两部分大小相等的区域。一半作为使用区，一半作为保留区。申请内存时，在使用区进行。GC时，我们将使用区的将被存活的对象复制到保留区，然后将使用区清空，这时我们将原使用区作为下次操作的保留区，原保留区作为下次申请内存操作的使用区。<br>（2）缺点：可使用内存减少了一半。<br>（3）其他算法策略：IMB公司根据新生代特点（死得快）将内存区分成9:1，其中包括80%的Eden和20%Surviver，Surviver区中取10%作为保留区，剩下90%都作为使用区。假如保留区不够怎么办？将多出的存活对象通过分配担保机制进入老年代。优点，针对存活率低的新生代，因为复制操作进行得少，效率高，并且作为保留区的空间较少；缺点，最坏的高存活率情况，复制操作会比较多，效率会变低，保留区空间小，不够用，需要额外空间。<br>复制算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png" alt=""></p>
+<h3 id="3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5"><a href="#3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5" class="headerlink" title="3.标记-整理算法"></a>3.标记-整理算法</h3><p>（1）算法思想：第一步与“标记-清除”算法一样，标记所有需要被回收的对象，第二部，存活对象向一端移动，然后直接清除端边界以外的内存。<br>（2）缺点：只是针对高存活率的老年代。<br>标记-整理算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg" alt=""></p>
+<h3 id="4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5"><a href="#4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5" class="headerlink" title="4.分代收集算法"></a>4.分代收集算法</h3><p>算法思想：结合前三种算法的优点，利用对象存活周期的特点划分年代。比如，高死亡率低存活率的新生代，可以使用复制算法，复制操作少，效率高，也没有额外空间对它进行分配担当；对于高存活率的老年代，就可以使用标记-清除算法或者标记-整理算法，提高收集效率。</p>
 <blockquote>
 <p>参考：《深入理解Java虚拟机》</p>
 </blockquote>
