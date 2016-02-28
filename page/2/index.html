@@ -111,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a>
+						<a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a>
 					</div>
 				</section>
 				
@@ -180,6 +180,78 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-算法学习-二叉搜索树转双向链表" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/算法学习-二叉搜索树转双向链表/" class="article-date">
+  	<time datetime="2016-02-18T05:21:09.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/算法学习-二叉搜索树转双向链表/">[算法学习]二叉搜索树转双向链表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>问题描述：</strong>  将一棵二叉搜索树转成一条排序好的双向链表。要求不能创建新结点。</p>
+<p><strong>解法与分析：</strong></p>
+<ol>
+<li>由于左子树&lt;根结点&lt;右子树，所以双向链表的头结点是二叉搜索树左子树中的最后一个左结点，双向链表的头结点是二叉搜索树右子树中的最后一个右结点，根结点则是链表的中间结点。</li>
+<li>将树结点中指向左孩子的指针作为双向链表中的前驱指针，指向右孩子的指针作为双向链表指向后继结点的指针。</li>
+<li>按照上面分析，可以使用树的中序遍历来转换双向链表。这里我们使用递归的方式来实现中序遍历+双向链表转换。</li>
+</ol>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/18/算法学习-二叉搜索树转双向链表/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-算法学习-栈的出栈序列" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -798,78 +870,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-复杂链表的复制/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法学习-二维数组的查找" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-二维数组的查找/" class="article-date">
-  	<time datetime="2016-02-18T05:12:11.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-二维数组的查找/">[算法学习]二维数组的查找</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>问题描述：</strong>  二维数组中的查找。在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样一个二维数组和一个整数，判断数组中是否包含该整数。<br>例如：<br>{<br> {1,2,3,4}<br> {2,4,6,7}<br> {4,5,7,8}<br> {6,7,8,9}<br>}</p>
-<p><strong>解法与分析：</strong> 可以使用二分法来查找。</p>
-<ol>
-<li>从四个角中找一个起点，向列走是递增&amp;向行走是递减，或者，向列走是递减&amp;向行走是递增。符合这个条件的只有左下角和右上角。</li>
-<li>以左下角为例，定义两个指针，一个向上走（减），一个向右走（增）。</li>
-<li>如何走？判断当前两个指针所指向二维数组中的值比搜索值大还是小，比搜索值大的话，向上走，比搜索值小的话，向右走。直到两个指针都停止不能走为止。</li>
-</ol>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-二维数组的查找/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>[读书笔记]JVM的垃圾收集算法 | Kesar的技术博客</title>
+  <title>[读书笔记]Java类加载过程 | Kesar的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.标记-清除算法（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。">
+  <meta name="description" content="一. 类的生命周期类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[读书笔记]JVM的垃圾收集算法">
-<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/28/读书笔记-JVM的垃圾收集算法/index.html">
+<meta property="og:title" content="[读书笔记]Java类加载过程">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/02/28/读书笔记-Java类加载过程/index.html">
 <meta property="og:site_name" content="Kesar的技术博客">
-<meta property="og:description" content="1.标记-清除算法（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。">
-<meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg">
-<meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png">
-<meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg">
-<meta property="og:updated_time" content="2016-02-27T16:13:14.839Z">
+<meta property="og:description" content="一. 类的生命周期类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：">
+<meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/%E7%B1%BB%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg">
+<meta property="og:updated_time" content="2016-02-28T15:45:34.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[读书笔记]JVM的垃圾收集算法">
-<meta name="twitter:description" content="1.标记-清除算法（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。">
+<meta name="twitter:title" content="[读书笔记]Java类加载过程">
+<meta name="twitter:description" content="一. 类的生命周期类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：">
   
     <link rel="alternative" href="/atom.xml" title="Kesar的技术博客" type="application/atom+xml">
   
@@ -183,11 +181,11 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-读书笔记-JVM的垃圾收集算法" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-读书笔记-Java类加载过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/28/读书笔记-JVM的垃圾收集算法/" class="article-date">
-  	<time datetime="2016-02-27T16:08:42.000Z" itemprop="datePublished">2016-02-28</time>
+      <a href="/2016/02/28/读书笔记-Java类加载过程/" class="article-date">
+  	<time datetime="2016-02-28T15:44:31.000Z" itemprop="datePublished">2016-02-28</time>
 </a>
     </div>
   
@@ -200,7 +198,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      [读书笔记]JVM的垃圾收集算法
+      [读书笔记]Java类加载过程
     </h1>
   
 
@@ -224,15 +222,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5"><a href="#1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5" class="headerlink" title="1.标记-清除算法"></a>1.标记-清除算法</h3><p>（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。<br>（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。<br><a id="more"></a><br>标记-清除算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg" alt=""></p>
-<h3 id="2-_u590D_u5236_u7B97_u6CD5"><a href="#2-_u590D_u5236_u7B97_u6CD5" class="headerlink" title="2.复制算法"></a>2.复制算法</h3><p>（1）算法思想：内存区分成两部分大小相等的区域。一半作为使用区，一半作为保留区。申请内存时，在使用区进行。GC时，我们将使用区的将被存活的对象复制到保留区，然后将使用区清空，这时我们将原使用区作为下次操作的保留区，原保留区作为下次申请内存操作的使用区。<br>（2）缺点：可使用内存减少了一半。<br>（3）其他算法策略：IMB公司根据新生代特点（死得快）将内存区分成9:1，其中包括80%的Eden和20%Surviver，Surviver区中取10%作为保留区，剩下90%都作为使用区。假如保留区不够怎么办？将多出的存活对象通过分配担保机制进入老年代。优点，针对存活率低的新生代，因为复制操作进行得少，效率高，并且作为保留区的空间较少；缺点，最坏的高存活率情况，复制操作会比较多，效率会变低，保留区空间小，不够用，需要额外空间。</p>
-<p>复制算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.png" alt=""></p>
-<h3 id="3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5"><a href="#3-_u6807_u8BB0-_u6574_u7406_u7B97_u6CD5" class="headerlink" title="3.标记-整理算法"></a>3.标记-整理算法</h3><p>（1）算法思想：第一步与“标记-清除”算法一样，标记所有需要被回收的对象，第二部，存活对象向一端移动，然后直接清除端边界以外的内存。<br>（2）缺点：只是针对高存活率的老年代。</p>
-<p>标记-整理算法执行过程如下图所示：<br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/jvm%E6%A0%87%E8%AE%B0-%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg" alt=""></p>
-<h3 id="4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5"><a href="#4-_u5206_u4EE3_u6536_u96C6_u7B97_u6CD5" class="headerlink" title="4.分代收集算法"></a>4.分代收集算法</h3><p>算法思想：结合前三种算法的优点，利用对象存活周期的特点划分年代。比如，高死亡率低存活率的新生代，可以使用复制算法，复制操作少，效率高，也没有额外空间对它进行分配担当；对于高存活率的老年代，就可以使用标记-清除算法或者标记-整理算法，提高收集效率。</p>
+        <h2 id="u4E00-__u7C7B_u7684_u751F_u547D_u5468_u671F"><a href="#u4E00-__u7C7B_u7684_u751F_u547D_u5468_u671F" class="headerlink" title="一. 类的生命周期"></a>一. 类的生命周期</h2><p>类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：<br><a id="more"></a><br><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/%E7%B1%BB%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg" alt=""></p>
+<p>以上“加载-&gt;验证-&gt;准备-&gt;解析-&gt;初始化”称为<strong>类的加载过程</strong>。<br>Java虚拟机规范中没有对什么时候需要开始类加载的第一阶段进行强制约束，而是交给了虚拟机根据具体实现来自由把握。<br>但是对于初始化阶段，虚拟机有以下5种必须对类立即进行“初始化”的情况：<br>（1）遇到new、getstatic、putstatic或invokestatic这4条字节码指令时，如果类还没初始化就需要马上触发其初始化。常见场景：使用new实例化对象、读取或设置一个类的静态字段（除了编译器处理了的final字段）以及调用一个类的静态方法时。<br>（2）使用反射（java.lang.reflect包）对类进行调用时，也会触发类的初始化。<br>（3）当初始化一个类时，发现父类还未初始化时，要先触发父类的初始化。<br>（4）当虚拟机启动时，用户需要指定一个执行包含main方法的主类，虚拟机会初始化这个类。<br>（5）当使用JDK1.7的动态语言支持时，如果一个java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic、REF_putStatic、REF_invokeStatic的方法句柄，触发对应的这个类的初始化。<br>以上5种场景的行为称为对一个类进行主动引用，除此之外的引用方式将不会触发类的初始化，称为被动引用。</p>
+<p><strong>以下是被动引用的一个列子：</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"SuperClass init!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value = <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span></span><br><span class="line">	&#123;</span><br><span class="line">		System.out.println(<span class="string">"SubClass init!"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotInitialization</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span><br><span class="line">	</span>&#123;</span><br><span class="line">		System.out.println(SubClass.value);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>参考：《深入理解Java虚拟机》</p>
+<p><strong>输出结果：</strong><br>SuperClass init!<br>123</p>
 </blockquote>
+<h2 id="u4E8C-_u7C7B_u7684_u52A0_u8F7D_u8FC7_u7A0B"><a href="#u4E8C-_u7C7B_u7684_u52A0_u8F7D_u8FC7_u7A0B" class="headerlink" title="二.类的加载过程"></a>二.类的加载过程</h2><h3 id="1-_u52A0_u8F7D"><a href="#1-_u52A0_u8F7D" class="headerlink" title="1.加载"></a>1.加载</h3><p>加载阶段进行过程：<br>（1）通过一个类的全限定名获取定义此类的二进制字节流；<br>（2）将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构；<br>（3）在内存中生成一个代表这个类的Java.lang.Class对象，作为方法区这个类的各种数据的访问入口。</p>
+<h3 id="2-_u9A8C_u8BC1"><a href="#2-_u9A8C_u8BC1" class="headerlink" title="2.验证"></a>2.验证</h3><p>验证是为了确保字节流包含信息符合当前虚拟机的要求，并且是安全的。<br>大概有四个验证阶段<br>（1）文件格式验证：验证字节流是否符合Class文件格式的规范；<br>（2）元数据验证：对字节码描述的信息进行语义分析，目的是对类的元数据信息（数据类型）进行语义校验；<br>（3）字节码验证：对类方法体进行校验分析；<br>（4）符号引用验证：对类自身以外（常量池中的各种符号引用）的信息进行匹配性校验。</p>
+<p>这里可以做一个优化：因为验证阶段耗时还是挺大的，假如已被重复使用多次并且是验证过的代码即可跳过这个步骤，加快类加载速度。</p>
+<h3 id="3-_u51C6_u5907"><a href="#3-_u51C6_u5907" class="headerlink" title="3.准备"></a>3.准备</h3><p>正式为类变量（static）分配内存和设置类变量的初始值，这里的类变量除了被final修饰的。</p>
+<h3 id="4-_u89E3_u6790"><a href="#4-_u89E3_u6790" class="headerlink" title="4.解析"></a>4.解析</h3><p>将符号引用替换成直接引用的过程。</p>
+<h3 id="5-_u521D_u59CB_u5316"><a href="#5-_u521D_u59CB_u5316" class="headerlink" title="5.初始化"></a>5.初始化</h3><p>执行<clinit>()类构造方法的过程，即static块语句的执行和变量的复制操作。</clinit></p>
 
       
     </div>
@@ -242,18 +243,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/02/28/读书笔记-Java类加载过程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          [读书笔记]Java类加载过程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/02/26/linux学习-centos下mysql的简单使用教程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">[linux学习]centos下mysql的简单使用教程</div>
+    <a href="/2016/02/28/读书笔记-JVM的垃圾收集算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[读书笔记]JVM的垃圾收集算法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -288,7 +280,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="读书笔记-JVM的垃圾收集算法" data-title="[读书笔记]JVM的垃圾收集算法" data-url="https://claymantwinkle.github.io/2016/02/28/读书笔记-JVM的垃圾收集算法/"></div>
+	<div class="ds-thread" data-thread-key="读书笔记-Java类加载过程" data-title="[读书笔记]Java类加载过程" data-url="https://claymantwinkle.github.io/2016/02/28/读书笔记-Java类加载过程/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
