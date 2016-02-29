@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Kesar的技术博客">
 <meta property="og:description" content="一. 类的生命周期类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/%E7%B1%BB%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg">
-<meta property="og:updated_time" content="2016-02-29T00:08:47.281Z">
+<meta property="og:updated_time" content="2016-02-29T00:11:41.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[读书笔记]Java类加载过程">
 <meta name="twitter:description" content="一. 类的生命周期类从被加载到虚拟机内存中开始，到卸载出内存为止，有以下（如图）的生命周期：">
@@ -233,7 +233,7 @@
 <p>这里可以做一个优化：因为验证阶段耗时还是挺大的，假如已被重复使用多次并且是验证过的代码即可跳过这个步骤，加快类加载速度。</p>
 <h3 id="3-_u51C6_u5907"><a href="#3-_u51C6_u5907" class="headerlink" title="3.准备"></a>3.准备</h3><p>正式为类变量（static）分配内存和设置类变量的初始值，这里的类变量除了被final修饰的。</p>
 <h3 id="4-_u89E3_u6790"><a href="#4-_u89E3_u6790" class="headerlink" title="4.解析"></a>4.解析</h3><p>将符号引用替换成直接引用的过程。</p>
-<h3 id="5-_u521D_u59CB_u5316"><a href="#5-_u521D_u59CB_u5316" class="headerlink" title="5.初始化"></a>5.初始化</h3><p>执行类构造方法<code>&lt;clinit&gt;()</code>的过程，即static块语句的执行和变量的复制操作。</p>
+<h3 id="5-_u521D_u59CB_u5316"><a href="#5-_u521D_u59CB_u5316" class="headerlink" title="5.初始化"></a>5.初始化</h3><p>执行类构造方法<code>&quot;&lt;clinit&gt;()&quot;</code>的过程，即static块语句的执行和变量的复制操作。</p>
 
       
     </div>
