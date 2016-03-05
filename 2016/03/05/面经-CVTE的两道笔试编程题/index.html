@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>[面经]CVTE的两道笔试编程题 | Kesar的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="晚上状态有点不好，然后就仓促参加笔试了。前面很多道选择题，真是坑，都是多选（混杂了多道单选）。下面就说说笔试题的两道编程题吧。其实我做的时候也是挺紧张的，随意符合题意的做完提交，也没加以优化，其实如果时间允许，我也是蛮想优化下的，不过这 场笔试不是看你优化得有多好，而是看你做对了没。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[面经]CVTE的两道笔试编程题">
+<meta property="og:url" content="https://claymantwinkle.github.io/2016/03/05/面经-CVTE的两道笔试编程题/index.html">
+<meta property="og:site_name" content="Kesar的技术博客">
+<meta property="og:description" content="晚上状态有点不好，然后就仓促参加笔试了。前面很多道选择题，真是坑，都是多选（混杂了多道单选）。下面就说说笔试题的两道编程题吧。其实我做的时候也是挺紧张的，随意符合题意的做完提交，也没加以优化，其实如果时间允许，我也是蛮想优化下的，不过这 场笔试不是看你优化得有多好，而是看你做对了没。">
+<meta property="og:updated_time" content="2016-03-05T14:42:08.598Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[面经]CVTE的两道笔试编程题">
+<meta name="twitter:description" content="晚上状态有点不好，然后就仓促参加笔试了。前面很多道选择题，真是坑，都是多选（混杂了多道单选）。下面就说说笔试题的两道编程题吧。其实我做的时候也是挺紧张的，随意符合题意的做完提交，也没加以优化，其实如果时间允许，我也是蛮想优化下的，不过这 场笔试不是看你优化得有多好，而是看你做对了没。">
+  
+    <link rel="alternative" href="/atom.xml" title="Kesar的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Kesar</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">砍树的人开始学造斧！</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/ClaymanTwinkle" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/2516095292" title="weibo">weibo</a>
+					        
+								<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kesarchen" title="zhihu">zhihu</a>
+					        
+								<a class="mail" target="_blank" href="mailto:claymantwinkle@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Android/" style="font-size: 12.5px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">为未来日子奋斗的程序员。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Kesar</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/img/head.jpg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Kesar</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">砍树的人开始学造斧！</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/ClaymanTwinkle" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2516095292" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/kesarchen" title="zhihu">zhihu</a>
+			        
+						<a class="mail" target="_blank" href="mailto:claymantwinkle@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-面经-CVTE的两道笔试编程题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/05/面经-CVTE的两道笔试编程题/" class="article-date">
+  	<time datetime="2016-03-05T14:38:24.000Z" itemprop="datePublished">2016-03-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [面经]CVTE的两道笔试编程题
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试经验/">面试经验</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法题/">算法题</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>晚上状态有点不好，然后就仓促参加笔试了。前面很多道选择题，真是坑，都是多选（混杂了多道单选）。下面就说说笔试题的两道编程题吧。其实我做的时候也是挺紧张的，随意符合题意的做完提交，也没加以优化，其实如果时间允许，我也是蛮想优化下的，不过这 场笔试不是看你优化得有多好，而是看你做对了没。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="u7B2C_u4E00_u9053_u9898_uFF1A_u5B57_u7B26_u6570_u7EC4_u7684_u5FAA_u73AF_u53F3_u79FB_u95EE_u9898"><a href="#u7B2C_u4E00_u9053_u9898_uFF1A_u5B57_u7B26_u6570_u7EC4_u7684_u5FAA_u73AF_u53F3_u79FB_u95EE_u9898" class="headerlink" title="第一道题：字符数组的循环右移问题"></a>第一道题：字符数组的循环右移问题</h3><blockquote>
+<p>题目要求：将N个字符的数组，循环右移K位。时间复杂度O(N)。<br>现场思路：</p>
+<ol>
+<li>k可以小于N，大于N，等于N，按照这几种请况分析。首先我们必须知道，当N=dK（d=0,1,2..）时，字符数组循环右移后，字符数组中字符位置不变。有了这个“突破口”我们就能将K&gt;N转化成K&lt;=N来解，这样缩小了判断的范围。</li>
+<li>接下来我们只需要分析K&lt;N的情况就可以了。由于需要修改原来数组，题目没要求限制使用的空间复杂度，这里，我就偷了个懒，申请了一个O(N)的字符数组，保存原来的数组中字符及其位置，然后就可以大胆的随意修改原来的数组了。for循环遍历复制数组，然后让当前数组下标(i+K)%length，这里+K就将字符右移了K位，%length让右移循环了。</li>
+<li>整理一下上面的思路，OK，写代码。</li>
+</ol>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">solution</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> length, <span class="keyword">int</span> shiftStep)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr==<span class="keyword">null</span>||length==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span> count=shiftStep%length;</span><br><span class="line">    <span class="keyword">if</span>(count==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">int</span>[] copy=<span class="keyword">new</span> <span class="keyword">int</span>[length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        copy[i]=arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">        arr[(i+count)%length]=copy[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u7B2C_u4E8C_u9053_u9898_uFF1A_u5B57_u7B26_u4E32_u53BB_u91CD_u95EE_u9898"><a href="#u7B2C_u4E8C_u9053_u9898_uFF1A_u5B57_u7B26_u4E32_u53BB_u91CD_u95EE_u9898" class="headerlink" title="第二道题：字符串去重问题"></a>第二道题：字符串去重问题</h3><blockquote>
+<p>题目要求：删除小写字母字符串中重复字符。如果可以，优先删除重复字符中排在比他小字符前面的字符。<br>现场思路：一开始，我本来在想这个问题的最优解，排除使用“暴破”。想了一阵子，可能是太紧张了，思路不开。时间快到了，被迫是用“暴破”。然而“暴破”也不是那么容易的，orz。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">solution</span><span class="params">(String s)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="keyword">null</span>||<span class="string">""</span>.equals(s)) <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder(s);</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &lt; sb.length())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> temp = sb.charAt(i);</span><br><span class="line">        <span class="keyword">boolean</span> isR = <span class="keyword">false</span>; <span class="comment">// 是否有重复的字符在i的前面</span></span><br><span class="line">        <span class="keyword">boolean</span> isFront = <span class="keyword">true</span>; <span class="comment">// 要删除前面的重复字符?true删除前面的重复字符:false删除后面的重复字符</span></span><br><span class="line">        <span class="keyword">int</span> j = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; sb.length())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (isFront &amp;&amp; sb.charAt(j) &lt; temp)</span><br><span class="line">            &#123;</span><br><span class="line">                isFront = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sb.charAt(j) == temp)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (isFront)</span><br><span class="line">                &#123;</span><br><span class="line">                    sb.deleteCharAt(j);</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    isR = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isR)</span><br><span class="line">        &#123;</span><br><span class="line">            sb.deleteCharAt(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>总结： 算法题还是要有针对性的刷题，然后从中提取解法和经验。</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/05/Android学习-ListView显示多种item/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">[Android学习]ListView显示多种item</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="面经-CVTE的两道笔试编程题" data-title="[面经]CVTE的两道笔试编程题" data-url="https://claymantwinkle.github.io/2016/03/05/面经-CVTE的两道笔试编程题/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"kesar"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Kesar
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://claymantwinkle.github.io/" target="_blank">kesar blog</a> 所有权归kesar所有
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
