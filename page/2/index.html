@@ -181,6 +181,77 @@
 
       <div class="body-wrap">
   
+    <article id="post-算法学习-后缀表达式转二叉树" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/算法学习-后缀表达式转二叉树/" class="article-date">
+  	<time datetime="2016-02-18T05:25:07.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/算法学习-后缀表达式转二叉树/">[算法学习]后缀表达式转二叉树</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>问题描述：</strong> 输入后缀表达式，输出后缀表达式的二叉树。</p>
+<p><strong>解法与分析：</strong> </p>
+<ol>
+<li>根据后缀表达式的特点，我们可以知道，只要是运算符的就都是根结点。</li>
+<li>我们这里需要使用一个栈来保存字符。遍历后缀表达式，每当遇到是非运算符的字符，就将它入栈，当遇到是运算符，就将栈中前两个结点出栈，和运算符组成一棵子树，然后入栈。遍历完成后，栈中剩下的唯一的一个结点就是该后缀表达式的二叉树的根结点。</li>
+</ol>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/18/算法学习-后缀表达式转二叉树/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-算法学习-树的广度遍历" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -790,75 +861,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-反转链表/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法学习-合并两个排序的链表" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-合并两个排序的链表/" class="article-date">
-  	<time datetime="2016-02-18T05:16:40.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-合并两个排序的链表/">[算法学习]合并两个排序的链表</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>问题描述：</strong>  合并两个排序的链表。</p>
-</blockquote>
-<h1 id="u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52"><a href="#u89E3_u6CD5_u4E00_uFF1A_u7528_u9012_u5F52" class="headerlink" title="解法一：用递归"></a>解法一：用递归</h1><blockquote>
-<p><strong>解法：</strong> 递归比较结点大小：每次递归，取出两个链表的头结点来比较，比较小的结点加入新链表中。</p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-合并两个排序的链表/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
