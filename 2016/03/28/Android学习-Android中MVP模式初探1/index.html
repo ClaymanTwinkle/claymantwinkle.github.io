@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/mvp/mvp.png">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/mvp/mvp_project.jpg">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/mvp/mvp_result.jpg">
-<meta property="og:updated_time" content="2016-03-28T13:45:55.745Z">
+<meta property="og:updated_time" content="2016-03-28T13:52:18.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Android学习]Android中MVP模式初探1">
 <meta name="twitter:description" content="前言：
@@ -237,9 +237,12 @@
 <p>前言：</p>
 <ol>
 <li>初识MVP模式时，看到它缺点是需要增加一倍的类的维护量。所以就暂时没用它。但是，当一个类的代码行数达到一定的量（1000行以上），这时候维护类变得好麻烦，主要是功能变得多了，方法数量也变多了。这个时候真的是需要给类“瘦瘦身”。</li>
-<li>这时候重新看了MVP模式，确实发现了“宝”。<a id="more"></a>
-<h1 id="u4E00_u3001_u7B80_u5355_u5B9A_u4E49"><a href="#u4E00_u3001_u7B80_u5355_u5B9A_u4E49" class="headerlink" title="一、简单定义"></a>一、简单定义</h1>Model层：将功能逻辑等封装才model层中，其中包括了Data的交互（数据库、网络等），一般用作为接口实现来给Presenter层调用。<br>View层：一般是Activity或fragment，主要是封装好用于交互界面用的方法，也是一般用作为接口实现来给Presenter层调用和调用Presenter反馈界面交互。<br>Presenter层：我认识它是作为MVP模式中关键的一层，用户交互的操作通过View层传到这里，Presenter调用Model层和View层的方法来完成功能的流程（我们可以理解View层和Model层的方法大部分都不会在自己内部被调用，而是通过实例被Presenter层调用），然后通过View层反馈给用户。</li>
+<li>这时候重新看了MVP模式，确实发现了“宝”。</li>
 </ol>
+</blockquote>
+<a id="more"></a>
+<h1 id="u4E00_u3001_u7B80_u5355_u5B9A_u4E49"><a href="#u4E00_u3001_u7B80_u5355_u5B9A_u4E49" class="headerlink" title="一、简单定义"></a>一、简单定义</h1><blockquote>
+<p>Model层：将功能逻辑等封装才model层中，其中包括了Data的交互（数据库、网络等），一般用作为接口实现来给Presenter层调用。<br>View层：一般是Activity或fragment，主要是封装好用于交互界面用的方法，也是一般用作为接口实现来给Presenter层调用和调用Presenter反馈界面交互。<br>Presenter层：我认识它是作为MVP模式中关键的一层，用户交互的操作通过View层传到这里，Presenter调用Model层和View层的方法来完成功能的流程（我们可以理解View层和Model层的方法大部分都不会在自己内部被调用，而是通过实例被Presenter层调用），然后通过View层反馈给用户。</p>
 </blockquote>
 <p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/img/mvp/mvp.png" alt=""></p>
 <h1 id="u4E8C_u3001_u4F7F_u7528_u4E00_u4E2A_u7B80_u5355_u7684_u4F8B_u5B50_u6765_u5B9E_u73B0_u4E00_u4E0B"><a href="#u4E8C_u3001_u4F7F_u7528_u4E00_u4E2A_u7B80_u5355_u7684_u4F8B_u5B50_u6765_u5B9E_u73B0_u4E00_u4E0B" class="headerlink" title="二、使用一个简单的例子来实现一下"></a>二、使用一个简单的例子来实现一下</h1><blockquote>
