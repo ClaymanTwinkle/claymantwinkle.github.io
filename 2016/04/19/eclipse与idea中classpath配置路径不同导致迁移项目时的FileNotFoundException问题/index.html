@@ -15,7 +15,7 @@
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/1.png">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/2.png">
 <meta property="og:image" content="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/3.png">
-<meta property="og:updated_time" content="2016-04-19T12:23:31.056Z">
+<meta property="og:updated_time" content="2016-04-19T12:25:15.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eclipse与idea中classpath配置路径不同导致迁移项目时的FileNotFoundException问题">
 <meta name="twitter:description" content="我这次遇到的问题是：我在迁移spring项目时，在eclipse中配置了一个resources目录，在eclipse中是在classpath下的，而搬到idea后，变成在classpath外部了，然后因为这个问题导致我的项目在idea中一直无法运行。">
@@ -226,7 +226,11 @@
       
         <blockquote>
 <p>我这次遇到的问题是：我在迁移spring项目时，在eclipse中配置了一个resources目录，在eclipse中是在classpath下的，而搬到idea后，变成在classpath外部了，然后因为这个问题导致我的项目在idea中一直无法运行。</p>
-<h2 id="3C_21-more-_3E"><a href="#3C_21-more-_3E" class="headerlink" title="<a id=" more"=""></a>"><!--more--></h2><p>然后我的解决办法是这么做的：</p>
+</blockquote>
+<hr>
+<a id="more"></a>
+<blockquote>
+<p>然后我的解决办法是这么做的：</p>
 </blockquote>
 <h3 id="1-_u6211_u8981_u5C06_u8FD9_u4E2Aresources_u76EE_u5F55_u79FB_u52A8_u5230classpath_u76EE_u5F55_u4E0B"><a href="#1-_u6211_u8981_u5C06_u8FD9_u4E2Aresources_u76EE_u5F55_u79FB_u52A8_u5230classpath_u76EE_u5F55_u4E0B" class="headerlink" title="1.我要将这个resources目录移动到classpath目录下"></a>1.我要将这个resources目录移动到classpath目录下</h3><p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/1.png" alt=""></p>
 <h3 id="2-_u6253_u5F00Project_Structure"><a href="#2-_u6253_u5F00Project_Structure" class="headerlink" title="2.打开Project Structure"></a>2.打开Project Structure</h3><p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/2.png" alt=""></p>
