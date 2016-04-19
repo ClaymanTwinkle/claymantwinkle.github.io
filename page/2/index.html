@@ -111,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/面试经验/" style="font-size: 13.33px;">面试经验</a>
+						<a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/面试经验/" style="font-size: 13.33px;">面试经验</a>
 					</div>
 				</section>
 				
@@ -180,6 +180,70 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-读书笔记-JVM的垃圾收集算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/28/读书笔记-JVM的垃圾收集算法/" class="article-date">
+  	<time datetime="2016-02-27T16:08:42.000Z" itemprop="datePublished">2016-02-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/28/读书笔记-JVM的垃圾收集算法/">[读书笔记]JVM的垃圾收集算法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5"><a href="#1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5" class="headerlink" title="1.标记-清除算法"></a>1.标记-清除算法</h3><p>（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。<br>（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/读书笔记/">读书笔记</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/28/读书笔记-JVM的垃圾收集算法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-linux学习-centos下mysql的简单使用教程" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -783,77 +847,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-二叉搜索树转双向链表/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法学习-栈的出栈序列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-栈的出栈序列/" class="article-date">
-  	<time datetime="2016-02-18T05:20:27.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-栈的出栈序列/">[算法学习]栈的出栈序列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>问题描述：</strong>  输入数字不重复的两组整数序列：压栈的序列A,出栈的序列B，验证AB是否为同一栈的序列。</p>
-<p><strong>解法与分析：</strong></p>
-<ol>
-<li>使用两个指针pA，pB分别在两个序列A，B上遍历。</li>
-<li>做个这样的判断，首先判断两个指针所指元素是否相等，若相等，则两个指针同时推进；若不相等，取出栈顶元素作比较；若与栈顶元素不相等，则序列A的元素入栈，pA指针向前推进，若与栈顶元素相等，则出栈，pB指针推进。</li>
-</ol>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-栈的出栈序列/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

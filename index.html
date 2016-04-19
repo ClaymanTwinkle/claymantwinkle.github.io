@@ -111,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/面试经验/" style="font-size: 13.33px;">面试经验</a>
+						<a href="/tags/Android/" style="font-size: 13.33px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 13.33px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 16.67px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/面试经验/" style="font-size: 13.33px;">面试经验</a>
 					</div>
 				</section>
 				
@@ -180,6 +180,76 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-eclipse与idea中classpath配置路径不同导致迁移项目时的FileNotFoundException问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/19/eclipse与idea中classpath配置路径不同导致迁移项目时的FileNotFoundException问题/" class="article-date">
+  	<time datetime="2016-04-19T12:20:36.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/eclipse与idea中classpath配置路径不同导致迁移项目时的FileNotFoundException问题/">eclipse与idea中classpath配置路径不同导致迁移项目时的FileNotFoundException问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>我这次遇到的问题是：我在迁移spring项目时，在eclipse中配置了一个resources目录，在eclipse中是在classpath下的，而搬到idea后，变成在classpath外部了，然后因为这个问题导致我的项目在idea中一直无法运行。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>然后我的解决办法是这么做的：</p>
+</blockquote>
+<h3 id="1-_u6211_u8981_u5C06_u8FD9_u4E2Aresources_u76EE_u5F55_u79FB_u52A8_u5230classpath_u76EE_u5F55_u4E0B"><a href="#1-_u6211_u8981_u5C06_u8FD9_u4E2Aresources_u76EE_u5F55_u79FB_u52A8_u5230classpath_u76EE_u5F55_u4E0B" class="headerlink" title="1.我要将这个resources目录移动到classpath目录下"></a>1.我要将这个resources目录移动到classpath目录下</h3><p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/1.png" alt=""></p>
+<h3 id="2-_u6253_u5F00Project_Structure"><a href="#2-_u6253_u5F00Project_Structure" class="headerlink" title="2.打开Project Structure"></a>2.打开Project Structure</h3><p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/2.png" alt=""></p>
+<h3 id="3-Modules__26gt_3B_26gt_3B_Project_Name__26gt_3B_26gt_3B_Sources__u9009_u4E2D_u76EE_u6807_u76EE_u5F55_u70B9_u51FB_Mark_as_Resources_uFF0C_u70B9_u51FBOK_u5B8C_u6210"><a href="#3-Modules__26gt_3B_26gt_3B_Project_Name__26gt_3B_26gt_3B_Sources__u9009_u4E2D_u76EE_u6807_u76EE_u5F55_u70B9_u51FB_Mark_as_Resources_uFF0C_u70B9_u51FBOK_u5B8C_u6210" class="headerlink" title="3.Modules &gt;&gt; Project Name &gt;&gt; Sources 选中目标目录点击 Mark as Resources，点击OK完成"></a>3.<code>Modules</code> &gt;&gt; <code>Project Name</code> &gt;&gt; <code>Sources</code> 选中目标目录点击 <code>Mark as Resources</code>，点击OK完成</h3><p><img src="http://7xpys3.com1.z0.glb.clouddn.com/blog/image/idea/3.png" alt=""></p>
+<h3 id="4-_u8FD0_u884C_u9879_u76EE_u53D1_u5E03_uFF0C_u6210_u529F_u4E86_uFF01"><a href="#4-_u8FD0_u884C_u9879_u76EE_u53D1_u5E03_uFF0C_u6210_u529F_u4E86_uFF01" class="headerlink" title="4.运行项目发布，成功了！"></a>4.运行项目发布，成功了！</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/JavaWeb/">JavaWeb</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-Android学习-Android中MVP模式初探1" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -765,70 +835,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/28/读书笔记-Java类加载过程/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-读书笔记-JVM的垃圾收集算法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/28/读书笔记-JVM的垃圾收集算法/" class="article-date">
-  	<time datetime="2016-02-27T16:08:42.000Z" itemprop="datePublished">2016-02-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/28/读书笔记-JVM的垃圾收集算法/">[读书笔记]JVM的垃圾收集算法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5"><a href="#1-_u6807_u8BB0-_u6E05_u9664_u7B97_u6CD5" class="headerlink" title="1.标记-清除算法"></a>1.标记-清除算法</h3><p>（1）算法思想：第一步，标记好所有需要回收的对象；第二步，清除被标记的对象。<br>（2）缺点：时间上，效率不高，无论是标记还是清除操作；空间上，会产生大量不连续的内存碎片，使得占用大内存的对象找不到足够的连续内存而进一步又提前触发一次GC。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JVM/">JVM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/读书笔记/">读书笔记</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/28/读书笔记-JVM的垃圾收集算法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
