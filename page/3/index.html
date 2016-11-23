@@ -111,7 +111,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Android/" style="font-size: 15px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 15px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 17.5px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 12.5px;">博客</a> <a href="/tags/面试经验/" style="font-size: 15px;">面试经验</a>
+						<a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/JVM/" style="font-size: 14px;">JVM</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/fragment/" style="font-size: 10px;">fragment</a> <a href="/tags/fragment的生命周期/" style="font-size: 10px;">fragment的生命周期</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 18px;">java</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/博客/" style="font-size: 12px;">博客</a> <a href="/tags/面试经验/" style="font-size: 16px;">面试经验</a>
 					</div>
 				</section>
 				
@@ -180,6 +180,79 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-算法学习-打印树的路径" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/算法学习-打印树的路径/" class="article-date">
+  	<time datetime="2016-02-18T05:22:02.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/算法学习-打印树的路径/">[算法学习]打印树的路径</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>问题描述：</strong>  输入一个整数sum和一棵二叉树，打印出二叉树中结点和为sum的所有路径。 （路径：从根结点往下一直到叶结点形成的一条路径。）</p>
+<p><strong>解法与分析：</strong></p>
+<ol>
+<li>需要从树上的根结点遍历到叶子结点，其中需要累加经过结点的值。</li>
+<li>当累加到叶子结点时，比较累加结点值和sum的值，如果相等，打印出路径；如果不相等，返回到上一层，寻找其他叶子结点。</li>
+<li>需要保存结点路径，还可以返回到上一个结点，可以选择用栈来保存经过结点。</li>
+<li>可以使用递归来描述这个解法。</li>
+</ol>
+</blockquote>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/算法/">算法</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/18/算法学习-打印树的路径/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-算法学习-二叉搜索树转双向链表" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -796,80 +869,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/18/算法学习-求链表的中间结点/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-算法学习-复杂链表的复制" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/18/算法学习-复杂链表的复制/" class="article-date">
-  	<time datetime="2016-02-18T05:13:05.000Z" itemprop="datePublished">2016-02-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/18/算法学习-复杂链表的复制/">[算法学习]复杂链表的复制</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><strong>问题描述：</strong>  复制一个复杂链表。 在复杂链表中，每个结点除了有一个指向下一个结点的next指针外，还有一个 sibing指针 指向链表中任意结点或者NULL。</p>
-</blockquote>
-<h1 id="u89E3_u6CD5_u4E00_uFF1A_u201C_u7206_u7834_u201D"><a href="#u89E3_u6CD5_u4E00_uFF1A_u201C_u7206_u7834_u201D" class="headerlink" title="解法一：“爆破”"></a>解法一：“爆破”</h1><blockquote>
-<p><strong>解法分析：</strong></p>
-<ol>
-<li>遍历第一遍数组，把复制链的next和各结点值复制好。需要时间O(n)</li>
-<li>第二遍遍历，二重for循环根据原链表，将复制链的slibing指针连接好。需要时间O(n^2)</li>
-<li>需要时间复杂度是O(n^2)，空间复杂度是O(1)</li>
-</ol>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/算法/">算法</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/18/算法学习-复杂链表的复制/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
